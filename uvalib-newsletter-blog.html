@@ -1,0 +1,27 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="uvalib-newsletter-blog">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'uvalib-newsletter-blog',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'uvalib-newsletter-blog',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

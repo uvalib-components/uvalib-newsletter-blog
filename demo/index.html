@@ -8,6 +8,7 @@
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../iron-ajax/iron-ajax.html">
 
     <link rel="import" href="../uvalib-newsletter-blog.html">
 
@@ -20,7 +21,8 @@
       <h3>Basic uvalib-newsletter-blog Demo</h3>
       <demo-snippet>
         <template>
-          <uvalib-newsletter-blog></uvalib-newsletter-blog>
+          <iron-ajax url="test.json" auto last-response="{{articles}}"></iron-ajax>
+          <uvalib-newsletter-blog articles="[[articles]]"></uvalib-newsletter-blog>
         </template>
       </demo-snippet>
     </div>

@@ -1,27 +1,426 @@
 <link rel="import" href="../polymer/polymer.html">
 
+<link rel="import" href="../app-route/app-location.html">
+<link rel="import" href="../app-route/app-route.html">
+<link rel="import" href="../app-route/app-route-converter.html">
+
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-media-query/iron-media-query.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../iron-pages/iron-pages.html">
+
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-menu/paper-menu.html">
+<link rel="import" href="../paper-card/paper-card.html">
+
+<link rel="import" href="../app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../app-layout/app-header/app-header.html">
+<link rel="import" href="../app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../app-layout/app-scroll-effects/effects/resize-snapped-title.html">
+<link rel="import" href="../app-layout/app-toolbar/app-toolbar.html">
+
+<link rel="import" href="../juicy-html/juicy-html.html">
+<link rel="import" href="../uvalib-helper-libs/typekit.html">
+<link rel="import" href="../uvalib-helper-libs/lodash.html">
+
 <dom-module id="uvalib-newsletter-blog">
-  <template>
-    <style>
-      :host {
-        display: block;
+
+<template>
+  <style include="iron-flex iron-flex-alignment"></style>
+  <style>
+
+  :host {
+    --app-primary-color: #002359;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+
+  app-drawer section {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  app-drawer h2 {
+    margin: 8px 0 0;
+    padding: 18px;
+    font-size: 18px;
+  }
+
+  app-header {
+    color: #fff;
+    background-color: #002359;
+  }
+
+  app-toolbar, h2, div[title] {
+    font-family: "prenton", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  #article-menu h2 {
+    margin: 0;
+    color: #E57200;
+  }
+
+  #article-menu a:link, #article-menu a:visited, #article-menu a:hover, #article-menu a:active {
+    color: #E57200
+  }
+
+  #article-menu .select-item {
+    padding: 15px;
+  }
+
+  #article-menu .iron-selected {
+    font-weight: inherit;
+    background-color: #E57200;
+    color: #ffffff;
+  }
+
+  #article-menu .iron-selected h2 {
+    color: #ffffff;
+  }
+
+  app-toolbar[bottom] {
+    background-color: #002359;
+  }
+
+  app-toolbar a:link, app-toolbar a:visited, app-toolbar a:hover, app-toolbar a:active {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  app-toolbar a {
+    margin: 15px;
+  }
+
+  #footer {
+    background-color: #002359;
+  }
+
+  div[title] {
+    font-size: 3em;
+  }
+
+  div[title] div[sub] {
+    font-size: .7em;
+  }
+
+  #article-menu {
+    float:right;
+    width: 300px;
+    margin: 20px;
+  }
+
+  #article {
+    font-family: "ff-dagny-web-pro", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.3em;
+    margin: 20px;
+  }
+
+  #content {
+    max-width: 970px;
+  }
+
+  #main hr {
+    border-top: dotted 2px;
+    border-top-color: #002359;
+    width: 100%;
+  }
+
+  #extras paper-card {
+    margin: 20px;
+    width: 250px;
+    min-width: 200px;
+    height: 100%;
+    --paper-card-header-image: {
+      width: 100%;
+    }
+  }
+
+  paper-menu#article-menu {
+    padding: 0;
+  }
+  </style>
+
+  <app-location route="{{_route}}"></app-location>
+  <app-route-converter path="{{_path}}" route="{{_route}}"></app-route-converter>
+  <app-route route="{{_route}}" pattern="/news" tail="{{_subRoute}}"></app-route>
+  <app-route route="{{_subRoute}}" pattern="/:issue" data="{{issueData}}" tail="{{_subsubRoute}}"></app-route>
+  <app-route route="{{_subsubRoute}}" pattern="/:article" data="{{articleData}}"></app-route>
+
+  <iron-media-query query="max-width: 800px" query-matches="{{smallScreen}}"></iron-media-query>
+
+  <app-drawer-layout small-screen?="{{smallScreen}}" drawer-width="288px" force-narrow>
+
+  <app-drawer swipe-open>
+  <section>
+    <a href="">Home</a>
+    <a href="">Archive</a>
+    <a href="">Subscribe</a>
+  </section>
+</app-drawer>
+
+<app-header-layout>
+
+<app-header id="header" shadow condenses fixed effects="blend-background parallax-background resize-snapped-title">
+
+<app-toolbar></app-toolbar>
+<app-toolbar></app-toolbar>
+<app-toolbar></app-toolbar>
+<app-toolbar></app-toolbar>
+<app-toolbar></app-toolbar>
+<app-toolbar>
+<div title spacer>
+  <div main>FACULTY NEWS</div>
+  <div sub>UVA Library Faculty News&mdash;{{_issue.title}}</div>
+</div>
+</app-toolbar>
+<app-toolbar></app-toolbar>
+<app-toolbar bottom>
+<template is="dom-if" if="[[smallScreen]]">
+  <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+</template>
+<div condensed-title><a href="/news/{{_issue.slug}}">Faculty News&mdash;{{_issue.title}}</a></div>
+<template is="dom-if" if="[[!smallScreen]]">
+  <a href="/news/{{_issue.slug}}">Home</a>
+<!--
+                <a href="/archive">Archive</a>
+              -->
+              <a href="/subscribe">Subscribe</a>
+            </template>
+          </app-toolbar>
+
+        </app-header>
+
+        <div id="main" class="vertical layout">
+          <div class="horizontal center-justified layout">
+            <div id="content">
+              <iron-pages id="pages" selected="{{_page}}" attr-for-selected="name">
+              <div name="news">
+                <paper-menu id="article-menu" attr-for-selected="id" selected="{{_selectedArticleSlug}}">
+                <template is="dom-repeat" items="{{_issue.childrenNodes}}">
+                  <div class="select-item" id="{{item.slug}}">
+                    <h2><template is="juicy-html" model="{{item}}" content$="{{item.title}}"></template></h2>
+                    <div><template is="juicy-html" model="{{item}}" content$="{{item.excerpt}}"></template></div>
+                    <div class="more"><a href="{{item.slug}}">read more</a></div>
+                  </div>
+                </template>
+              </paper-menu>
+              <article id="article">
+                <template is="dom-if" if="{{_article}}">
+                  <h1><template is="juicy-html" model="{{_article}}" content$="{{_article.title}}"></template></h1>
+                </template>
+                <template is="juicy-html" model="{{_currentItem}}" content$="{{_currentItem.content}}"></template>
+              </article>
+            </div>
+            <div name="archive">Archive!</div>
+            <div name="subscribe">
+
+              <!-- Begin MailChimp Signup Form -->
+              <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+              <style type="text/css">
+              #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+            /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+            </style>
+            <div id="mc_embed_signup">
+              <form action="//firebaseapp.us11.list-manage.com/subscribe/post?u=b3b464079681e6025e1d45915&amp;id=1cd7367b7d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                  <h2>Subscribe to our mailing list</h2>
+                  <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                  <div class="mc-field-group">
+                    <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+                    </label>
+                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                  </div>
+                  <div class="mc-field-group">
+                    <label for="mce-FNAME">First Name </label>
+                    <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                  </div>
+                  <div class="mc-field-group">
+                    <label for="mce-LNAME">Last Name </label>
+                    <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+                  </div>
+                  <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                  </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b3b464079681e6025e1d45915_1cd7367b7d" tabindex="-1" value=""></div>
+                  <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+              </form>
+            </div>
+            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+            <!--End mc_embed_signup-->
+
+          </div>
+        </iron-pages>
+      </div>
+    </div>
+    <hr />
+    <div id="extras" class="horizontal center-justified layout wrap">
+      <paper-card heading="Library Faculty Survey" image="images/Facsurvey.png">
+      <div class="card-content">
+        We need your input &mdash; please take a few minutes to fill out our survey regarding Virgo and a new Library mobile app.
+      </div>
+      <div class="card-actions">
+        <paper-button>Take the survey</paper-button>
+      </div>
+    </paper-card>
+    <paper-card heading="400 Years of Shakespeare" image="images/Shakespeare_TN.png">
+    <div class="card-content">
+      Making 400 years since Shakespeare's death, the new exhibition in Harrison/Small celebrates the vibrant, complex, and sometimes contentious history of bringing his works into print.
+    </div>
+    <div class="card-actions">
+      <paper-button>Schedule a tour</paper-button>
+    </div>
+  </paper-card>
+  <paper-card heading="What Happens When You Open a Book?" image="images/Bookgraphic.png">
+  <div class="card-content">
+    We had some fun with this graphic about books and learning, which went viral &mdash; it was shared thousands of times on social media and made it to blogs all over the world!
+  </div>
+  <div class="card-actions">
+    <paper-button>View the graphic</paper-button>
+  </div>
+</paper-card>
+</div>
+<div id="footer">
+  Footer
+</div>
+</div>
+
+</app-header-layout>
+
+</app-drawer-layout>
+
+</template>
+
+<script>
+var jQuery={noConflict:function(){}};
+
+Polymer({
+  is: 'uvalib-newsletter-blog',
+  properties: {
+    articles: {
+      type:Object,
+      value:{}
+    },
+    _route: Object,
+    _path: {
+      type: Object,
+      observer:"_pathChanged"
+    },
+    _subRoute: Object,
+    _subsubRoute: Object,
+    issueData: {
+      type:Object,
+      value:{issue:""}
+    },
+    articleData: {
+      type:Object,
+      value:{article:""}
+    },
+    _article: Object,
+    _issue:{
+      type:Object,
+      observer:"_issueChanged"
+    },
+    _currentItem: Object,
+    _selectedArticleSlug:{
+      type:String,
+      observer:"_articleSelected"
+    },
+    _page:{
+      type:String,
+      value:"news"
+    }
+  },
+
+  observers: ['_updateArticle(articles, issueData.issue, articleData.article)'],
+
+  _pathChanged: function(){
+    if (_.startsWith(this._path, '/archive')) this._page = "archive";
+    else if (_.startsWith(this._path, '/subscribe')) this._page = "subscribe";
+    else this._page = "news";
+  },
+
+  _articleSelected: function(){
+    if (this._selectedArticleSlug) {
+      this._path="/news/"+this._issue.slug+"/"+this._selectedArticleSlug;
+      window.scroll(0,450);
+    }
+  },
+
+  _issueChanged: function(){
+    this.set('_issue.childrenNodes', _.map(this._issue.children, function(childId){
+      return _.find(this.articles.posts, {id: childId});
+    }.bind(this) ));
+    var image = this._getImage(this._issue);
+    if (image) {
+      this.$.header.customStyle['--app-header-background-front-layer'] = "background-image: url("+image+"); background-position: 50% 10%;";
+      this.$.header.updateStyles();
+    }
+  },
+
+  _getImage: function(item){
+    if (item.attachments.length>0 && item.attachments[0].url){
+      return item.attachments[0].url;
+    } else {
+      return null;
+    }
+  },
+
+  _or: function(t1, t2){
+    return (t1 || t2);
+  },
+  _and: function(t1,t2){
+    return (t1 && t2);
+  },
+
+  _updateArticle: function(articles, issue, article){
+   this.debounce('update', function(){
+    if (this._subsubRoute.path=="") { 
+      article=this._article=null; 
+      this.querySelector('#article-menu').select(null);
+    }
+    var posts = _.orderBy(articles.posts, ['date'], ['desc']);
+    if (posts.length > 0) {
+      if (!issue && !article) {
+        // get the latest post that has children
+        this._issue = _.find(posts, function(o){
+          return o.children.length>0;
+        });
+        this._path="/news/"+this._issue.slug;
+
+        // or
+        // get the latest post
+        if (!this._issue)
+          this._issue = posts[0];
+        this._path="/news/"+this._issue.slug;
+
+      } else if (issue && !article) {
+        // get the issue being asked for
+        this._currentItem = this._issue = _.find(posts, {slug: issue});
+        // or
+        // remove issue from url if not available
+        if (!this._issue)
+          this._path = "/";
+      } else if (issue && article) {
+        // get the issue and article being asked for
+        this._issue = _.find(posts, {slug: issue});
+        this._currentItem = this._article = _.find(posts, {slug: article});
+        // or
+        // remove article from url if not available
+        if (!this._issue)
+          this._path = "/";
+        else if (!this._article)
+          this._path = "/"+this._issue.slug;
       }
-    </style>
-    <h2>Hello [[prop1]]</h2>
-  </template>
+    }
+  }, 100);
+}
+});
+</script>
 
-  <script>
-    Polymer({
-
-      is: 'uvalib-newsletter-blog',
-
-      properties: {
-        prop1: {
-          type: String,
-          value: 'uvalib-newsletter-blog',
-        },
-      },
-
-    });
-  </script>
 </dom-module>

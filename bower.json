@@ -14,7 +14,8 @@
     "paper-menu": "^1.2.2",
     "paper-card": "^0.1.5",
     "juicy-html": "^1.1.0",
-    "uvalib-helper-libs": "uvalib-components/uvalib-helper-libs#^1.0.0"
+    "uvalib-helper-libs": "uvalib-components/uvalib-helper-libs#^1.0.0",
+    "app-route": "PolymerElements/app-route#^0.9.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

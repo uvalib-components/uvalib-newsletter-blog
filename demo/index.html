@@ -20,7 +20,7 @@
     <div class="vertical-section-container centered">
       <h3>Basic uvalib-newsletter-blog Demo</h3>
       <demo-snippet>
-        <template>
+        <template is="dom-bind" id="app">
           <iron-ajax url="test.json" auto last-response="{{articles}}"></iron-ajax>
           <uvalib-newsletter-blog articles="[[articles]]"></uvalib-newsletter-blog>
         </template>

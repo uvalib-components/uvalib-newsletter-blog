@@ -99,11 +99,14 @@
   }
 
   div[title] {
-    font-size: 3em;
+    font-family: "franklin-gothic-urw",sans-serif;
+    font-weight: 400;
+    font-size: 4em;
   }
 
   div[title] div[sub] {
-    font-size: .7em;
+    font-size: .4em;
+    font-weight: 200;
   }
 
   #article-menu {
@@ -122,6 +125,10 @@
     max-width: 970px;
   }
 
+  #main {
+    line-height:2;
+  }
+
   #main hr {
     border-top: dotted 2px;
     border-top-color: #002359;
@@ -136,6 +143,10 @@
     --paper-card-header-image: {
       width: 100%;
     }
+  }
+
+  #content {
+    margin-top: 2.5em;
   }
 
   paper-menu#article-menu {
@@ -380,8 +391,8 @@ Polymer({
 
   _updateArticle: function(articles, issue, article){
    this.debounce('update', function(){
-    if (this._subsubRoute.path=="") { 
-      article=this._article=null; 
+    if (this._subsubRoute.path=="") {
+      article=this._article=null;
       this.querySelector('#article-menu').select(null);
     }
     var posts = _.orderBy(articles.posts, ['date'], ['desc']);

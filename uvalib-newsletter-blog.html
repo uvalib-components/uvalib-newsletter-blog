@@ -62,6 +62,8 @@
   #article-menu h2 {
     margin: 0;
     color: #E57200;
+    font-size: 1.6em;
+    margin-bottom: .5em;
   }
 
   #article-menu a:link, #article-menu a:visited, #article-menu a:hover, #article-menu a:active {
@@ -160,6 +162,17 @@
     font-size: 1.5em;
     line-height: 1.5;
   }
+
+  article.issue p:first-child:first-letter {
+    float: left;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-family: font-family: "prenton", "Helvetica Neue", Arial, sans-serif;
+  }
+  
   </style>
 
   <app-location route="{{_route}}"></app-location>
@@ -226,7 +239,7 @@
                   </div>
                 </template>
               </paper-menu>
-              <article id="article">
+              <article id="article" class$="{{_type(_article)}}">
                 <template is="dom-if" if="{{_article}}">
                   <h1><template is="juicy-html" model="{{_article}}" content$="{{_article.title}}"></template></h1>
                 </template>
@@ -356,6 +369,11 @@ Polymer({
   },
 
   observers: ['_updateArticle(articles, issueData.issue, articleData.article)'],
+
+  _type: function(article) {
+    if(article) return "article";
+    else return "issue";
+  },
 
   _openlink: function(e,a,b){
     window.open(e.currentTarget.querySelector('.card-link').getAttribute('href'),"_blank");

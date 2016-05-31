@@ -25,6 +25,7 @@
 <link rel="import" href="../juicy-html/juicy-html.html">
 <link rel="import" href="../uvalib-helper-libs/typekit.html">
 <link rel="import" href="../uvalib-helper-libs/lodash.html">
+<link rel="import" href="../uvalib-footer/uvalib-footer.html">
 
 <dom-module id="uvalib-newsletter-blog">
 
@@ -296,9 +297,7 @@
   </div>
 </paper-card>
 </div>
-<div id="footer">
-  Footer
-</div>
+<uvalib-footer></uvalib-footer>
 </div>
 
 </app-header-layout>
@@ -313,6 +312,10 @@ var jQuery={noConflict:function(){}};
 Polymer({
   is: 'uvalib-newsletter-blog',
   properties: {
+    links: {
+      type:Object,
+      value:{}
+    },
     articles: {
       type:Object,
       value:{}
@@ -336,6 +339,9 @@ Polymer({
     _issue:{
       type:Object,
       observer:"_issueChanged"
+    },
+    _issueCategories:{
+      type:Array,
     },
     _currentItem: Object,
     _selectedArticleSlug:{
@@ -372,6 +378,7 @@ Polymer({
       this.$.header.customStyle['--app-header-background-front-layer'] = "background-image: url("+image+"); background-position: 50% 10%;";
       this.$.header.updateStyles();
     }
+    this._issueCategories;
   },
 
   _getImage: function(item){

@@ -153,6 +153,13 @@
   paper-menu#article-menu {
     padding: 0;
   }
+
+  .card-header {
+    margin: 1em;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
   </style>
 
   <app-location route="{{_route}}"></app-location>
@@ -272,30 +279,18 @@
     </div>
     <hr />
     <div id="extras" class="horizontal center-justified layout wrap">
-      <paper-card heading="Library Faculty Survey" image="images/Facsurvey.png">
-      <div class="card-content">
-        We need your input &mdash; please take a few minutes to fill out our survey regarding Virgo and a new Library mobile app.
-      </div>
-      <div class="card-actions">
-        <paper-button>Take the survey</paper-button>
-      </div>
-    </paper-card>
-    <paper-card heading="400 Years of Shakespeare" image="images/Shakespeare_TN.png">
-    <div class="card-content">
-      Making 400 years since Shakespeare's death, the new exhibition in Harrison/Small celebrates the vibrant, complex, and sometimes contentious history of bringing his works into print.
-    </div>
-    <div class="card-actions">
-      <paper-button>Schedule a tour</paper-button>
-    </div>
-  </paper-card>
-  <paper-card heading="What Happens When You Open a Book?" image="images/Bookgraphic.png">
-  <div class="card-content">
-    We had some fun with this graphic about books and learning, which went viral &mdash; it was shared thousands of times on social media and made it to blogs all over the world!
-  </div>
-  <div class="card-actions">
-    <paper-button>View the graphic</paper-button>
-  </div>
-</paper-card>
+
+      <template is="dom-repeat" items="{{links.posts}}">
+        <paper-card class="superlinks" image="[[item.attachments.0.url]]" on-tap="_openlink">
+          <a style="display:none" class="card-link" href="[[item.custom_fields.link.0]]"></a>
+          <div class="card-header">[[item.title_plain]]</div>
+          <div class="card-content"><template is="juicy-html" model="{{item}}" content$="{{item.content}}"></template></div>
+          <div class="card-actions">
+            <paper-button>[[item.custom_fields.linkText.0]]</paper-button>
+          </div>
+        </paper-card>
+      </template>
+
 </div>
 <uvalib-footer></uvalib-footer>
 </div>
@@ -355,6 +350,10 @@ Polymer({
   },
 
   observers: ['_updateArticle(articles, issueData.issue, articleData.article)'],
+
+  _openlink: function(e,a,b){
+    window.open(e.currentTarget.querySelector('.card-link').getAttribute('href'),"_blank");
+  },
 
   _pathChanged: function(){
     if (_.startsWith(this._path, '/archive')) this._page = "archive";

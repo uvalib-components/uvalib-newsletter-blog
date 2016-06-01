@@ -22,7 +22,6 @@
 <link rel="import" href="../app-layout/app-scroll-effects/effects/resize-snapped-title.html">
 <link rel="import" href="../app-layout/app-toolbar/app-toolbar.html">
 
-<link rel="import" href="../juicy-html/juicy-html.html">
 <link rel="import" href="../uvalib-helper-libs/typekit.html">
 <link rel="import" href="../uvalib-helper-libs/lodash.html">
 <link rel="import" href="../uvalib-footer/uvalib-footer.html">
@@ -163,7 +162,7 @@
     line-height: 1.5;
   }
 
-  article.issue p:first-child:first-letter {
+  .content.style-scope.uvalib-newsletter-blog:first-letter {
     float: left;
     font-size: 75px;
     line-height: 60px;
@@ -172,7 +171,7 @@
     padding-left: 3px;
     font-family: font-family: "prenton", "Helvetica Neue", Arial, sans-serif;
   }
-  
+
   </style>
 
   <app-location route="{{_route}}"></app-location>
@@ -233,17 +232,17 @@
                 <paper-menu id="article-menu" attr-for-selected="id" selected="{{_selectedArticleSlug}}">
                 <template is="dom-repeat" items="{{_issue.childrenNodes}}">
                   <div class="select-item" id="{{item.slug}}">
-                    <h2><template is="juicy-html" model="{{item}}" content$="{{item.title}}"></template></h2>
-                    <div><template is="juicy-html" model="{{item}}" content$="{{item.excerpt}}"></template></div>
+                    <h2 inner-h-t-m-l="{{item.title}}"></h2>
+                    <div inner-h-t-m-l="{{item.excerpt}}"></div>
                     <div class="more"><a href="{{item.slug}}">read more</a></div>
                   </div>
                 </template>
               </paper-menu>
               <article id="article" class$="{{_type(_article)}}">
                 <template is="dom-if" if="{{_article}}">
-                  <h1><template is="juicy-html" model="{{_article}}" content$="{{_article.title}}"></template></h1>
+                  <h1 inner-h-t-m-l="{{_article.title}}"></h1>
                 </template>
-                <template is="juicy-html" model="{{_currentItem}}" content$="{{_currentItem.content}}"></template>
+                <div class="content" inner-h-t-m-l="{{_currentItem.content}}"></div>
               </article>
             </div>
             <div name="archive">Archive!</div>
@@ -303,7 +302,7 @@
         <paper-card class="superlinks" image="[[item.attachments.0.url]]" on-tap="_openlink">
           <a style="display:none" class="card-link" href="[[item.custom_fields.link.0]]"></a>
           <div class="card-header">[[item.title_plain]]</div>
-          <div class="card-content"><template is="juicy-html" model="{{item}}" content$="{{item.content}}"></template></div>
+          <div class="card-content" inner-h-t-m-l="{{item.content}}"></div>
           <div class="card-actions">
             <paper-button>[[item.custom_fields.linkText.0]]</paper-button>
           </div>

@@ -141,6 +141,16 @@
     width: auto;
     z-index: 100000; /* Above WP toolbar. */
   }
+
+  #ok:first-letter {
+    float: left;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-family: font-family: "prenton", "Helvetica Neue", Arial, sans-serif;
+  }
   </style>
   <div id="ok"></div>
   </template>
@@ -301,18 +311,13 @@
     line-height: 1.5;
   }
 
-  .content.style-scope.uvalib-newsletter-blog:first-letter {
-    float: left;
-    font-size: 75px;
-    line-height: 60px;
-    padding-top: 4px;
-    padding-right: 8px;
-    padding-left: 3px;
-    font-family: font-family: "prenton", "Helvetica Neue", Arial, sans-serif;
-  }
-
   paper-card.superlinks {
     height: auto !important;
+    --paper-card-actions: {
+      font-weight: strong;
+      background-color: #E57200;
+      color: #ffffff;
+    };
   }
 
   </style>

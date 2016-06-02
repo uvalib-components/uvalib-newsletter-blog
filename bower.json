@@ -16,7 +16,8 @@
     "uvalib-helper-libs": "uvalib-components/uvalib-helper-libs#master",
     "app-route": "PolymerElements/app-route#^0.9.1",
     "uvalib-footer": "uvalib-components/uvalib-footer",
-    "paper-card": "PolymerElements/paper-card#^1.1.1"
+    "paper-card": "PolymerElements/paper-card#^1.1.1",
+    "polymer-font-awesome": "^0.1.4"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

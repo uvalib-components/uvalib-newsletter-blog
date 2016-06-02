@@ -109,7 +109,7 @@
   }
 
   .wp-caption p.wp-caption-text {
-      font-size: 11px;
+      font-size: 12px;
       line-height: 17px;
       margin: 0;
       padding: 0 4px 5px;
@@ -559,8 +559,12 @@ Polymer({
 
   _pathChanged: function(){
     if (_.startsWith(this._path, '/archive')) this._page = "archive";
-    else if (_.startsWith(this._path, '/subscribe')) this._page = "subscribe";
+    else if (_.startsWith(this._path, '/subscribe')) {
+      this._page = "subscribe";
+      window.scroll(0,450);
+    }
     else this._page = "news";
+    window.scroll(0,450);
   },
 
   _articleSelected: function(){

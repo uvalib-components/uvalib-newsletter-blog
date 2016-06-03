@@ -329,7 +329,7 @@
 
   </style>
 
-  <app-location route="{{_route}}"></app-location>
+  <app-location url-space-regex="^/(news|subscribe)" route="{{_route}}"></app-location>
   <app-route-converter path="{{_path}}" route="{{_route}}"></app-route-converter>
   <app-route route="{{_route}}" pattern="/news" tail="{{_subRoute}}"></app-route>
   <app-route route="{{_subRoute}}" pattern="/:issue" data="{{issueData}}" tail="{{_subsubRoute}}"></app-route>

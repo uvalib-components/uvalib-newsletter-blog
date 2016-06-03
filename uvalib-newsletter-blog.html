@@ -23,13 +23,11 @@
 <link rel="import" href="../app-layout/app-scroll-effects/effects/resize-snapped-title.html">
 <link rel="import" href="../app-layout/app-toolbar/app-toolbar.html">
 
-<link rel="import" href="../polymer-font-awesome/polymer-font-awesome.html" />
-
 <link rel="import" href="../uvalib-helper-libs/typekit.html">
 <link rel="import" href="../uvalib-helper-libs/lodash.html">
 <link rel="import" href="../uvalib-footer/uvalib-footer.html">
 <link rel="import" href="../juicy-html/juicy-html.html">
-<link rel="import" href="../uvalib-social-links.html">
+<link rel="import" href="../uvalib-social-links/uvalib-social-links.html">
 
 <dom-module id="html-echo">
   <template>
@@ -565,7 +563,6 @@ Polymer({
       window.scroll(0,450);
     }
     else this._page = "news";
-    window.scroll(0,450);
   },
 
   _articleSelected: function(){

@@ -17,7 +17,8 @@
     "app-route": "PolymerElements/app-route#^0.9.1",
     "uvalib-footer": "uvalib-components/uvalib-footer",
     "paper-card": "PolymerElements/paper-card#^1.1.1",
-    "uvalib-social-links": "uvalib-components/uvalib-social-links"
+    "uvalib-social-links": "uvalib-components/uvalib-social-links",
+    "uvalib-analytics": "uvalib-components/uvalib-analytics#master"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

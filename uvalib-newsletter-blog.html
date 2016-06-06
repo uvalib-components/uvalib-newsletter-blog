@@ -609,7 +609,7 @@ Polymer({
       this.querySelector('#article-menu').select(null);
     }
     var posts = _.orderBy(articles.posts, ['date'], ['desc']);
-    if (posts.length > 0) {
+    if (posts.length > 0 && !_.startsWith(this._path, '/subscribe')) {
       if (!issue && !article) {
         // get the latest post that has children
         this._issue = _.find(posts, function(o){

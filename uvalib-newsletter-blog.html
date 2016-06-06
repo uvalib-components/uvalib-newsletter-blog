@@ -328,7 +328,7 @@
     color: #ffffff;
   }
 
-  #news[small-screen] {
+  #news.small-screen {
     max-width: 425px;
   }
 
@@ -388,7 +388,7 @@
           <div class="horizontal center-justified layout">
             <div id="content">
               <iron-pages id="pages" selected="{{_page}}" attr-for-selected="name">
-              <div id="news" name="news" small-screen?="{{smallScreen}}">
+              <div id="news" name="news" class={{_isSmallClass(smallScreen})}">
                 <paper-menu id="article-menu" attr-for-selected="id" selected="{{_selectedArticleSlug}}">
                 <template is="dom-repeat" items="{{_issue.childrenNodes}}">
                   <div class="select-item" id="{{item.slug}}">
@@ -557,6 +557,10 @@ Polymer({
   _type: function(article) {
     if(article) return "article";
     else return "issue";
+  },
+
+  _isSmallClass: function(small){
+    if (small) return "small-screen";
   },
 
   _openlink: function(e,a,b){

@@ -388,7 +388,7 @@
           <div class="horizontal center-justified layout">
             <div id="content">
               <iron-pages id="pages" selected="{{_page}}" attr-for-selected="name">
-              <div id="news" name="news" class={{_isSmallClass(smallScreen})}">
+              <div id="news" name="news" class={{_isSmallClass(smallScreen})}}">
                 <paper-menu id="article-menu" attr-for-selected="id" selected="{{_selectedArticleSlug}}">
                 <template is="dom-repeat" items="{{_issue.childrenNodes}}">
                   <div class="select-item" id="{{item.slug}}">

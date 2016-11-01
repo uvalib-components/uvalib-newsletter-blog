@@ -24,7 +24,9 @@
 <link rel="import" href="../app-layout/app-toolbar/app-toolbar.html">
 
 <link rel="import" href="../uvalib-helper-libs/typekit.html">
+
 <link rel="import" href="../uvalib-helper-libs/lodash.html">
+
 <link rel="import" href="../uvalib-footer/uvalib-footer.html">
 <link rel="import" href="../juicy-html/juicy-html.html">
 <link rel="import" href="../uvalib-social-links/uvalib-social-links.html">
@@ -588,7 +590,7 @@ Polymer({
       return _.find(this.articles.posts, {id: childId});
     }.bind(this) ));
     var image = this._getImage(this._issue);
-    if (image) {
+    if (image && this.$.header && this.$.header.customStyle) {
       this.$.header.customStyle['--app-header-background-front-layer'] = "background-image: url("+image+"); background-position: 50% 10%;";
       this.$.header.updateStyles();
     }
@@ -612,7 +614,7 @@ Polymer({
 
   _updateArticle: function(articles, issue, article){
    this.debounce('update', function(){
-    if (this._subsubRoute.path=="") {
+    if (this._subsubRoute && this._subsubRoute.path=="") {
       article=this._article=null;
       this.querySelector('#article-menu').select(null);
     }

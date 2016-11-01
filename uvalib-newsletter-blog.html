@@ -15,6 +15,9 @@
 <link rel="import" href="../paper-menu/paper-menu.html">
 <link rel="import" href="../paper-card/paper-card.html">
 
+<link rel="import" href="../paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../paper-item/paper-item.html">
+
 <link rel="import" href="../app-layout/app-drawer-layout/app-drawer-layout.html">
 <link rel="import" href="../app-layout/app-drawer/app-drawer.html">
 <link rel="import" href="../app-layout/app-header-layout/app-header-layout.html">
@@ -334,6 +337,11 @@
     max-width: 425px;
   }
 
+  paper-button {
+    text-transform: none;
+    font-weight: 500;
+  }
+
   </style>
 
   <app-location url-space-regex="^/(news|subscribe)" route="{{_route}}"></app-location>
@@ -377,9 +385,17 @@
 <div condensed-title><a href="/news/{{_issue.slug}}">Faculty News&mdash;{{_issue.title}}</a></div>
 <template is="dom-if" if="[[!smallScreen]]">
   <a href="/news/{{_issue.slug}}">Home</a>
-<!--
-                <a href="/archive">Archive</a>
-              -->
+  <paper-menu-button>
+    <paper-button class="dropdown-trigger">
+      <span>Archive</span>
+    </paper-button>
+    <paper-menu class="dropdown-content" attr-for-selected="slug" selected="{{issueData.issue}}">
+      <template is="dom-repeat" items="{{_issueSlugs}}">
+        <paper-item slug="{{item.slug}}">{{item.title}}</paper-item>
+      </template>
+    </paper-menu>
+  </paper-menu-button>
+
               <a href="/subscribe">Subscribe</a>
             </template>
           </app-toolbar>
@@ -518,7 +534,12 @@ Polymer({
     },
     articles: {
       type:Object,
-      value:{}
+      value:{},
+      observer:"_articlesChanged"
+    },
+    _issueSlugs: {
+      type: Array,
+      value: []
     },
     _route: Object,
     _path: {
@@ -567,6 +588,10 @@ Polymer({
 
   _openlink: function(e,a,b){
     window.open(e.currentTarget.querySelector('.card-link').getAttribute('href'),"_blank");
+  },
+
+  _articlesChanged: function(){
+    this._issueSlugs = _.compact(_.map(this.articles.posts, function(post){ if(post.children.length>0) return {slug: post.slug, title: post.title}; }));
   },
 
   _pathChanged: function(){

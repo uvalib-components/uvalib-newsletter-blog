@@ -18,7 +18,10 @@
     "uvalib-footer": "uvalib-components/uvalib-footer#^0.0.1",
     "paper-card": "PolymerElements/paper-card#^1.1.4",
     "uvalib-social-links": "uvalib-components/uvalib-social-links#^0.0.1",
-    "uvalib-analytics": "uvalib-components/uvalib-analytics#^0.0.1"
+    "uvalib-analytics": "uvalib-components/uvalib-analytics#^0.0.1",
+    "uvalib-theme": "uvalib-components/uvalib-theme#^0.0.1",
+    "paper-item": "PolymerElements/paper-item#^1.2.1",
+    "paper-menu-button": "PolymerElements/paper-menu-button#^1.5.2"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

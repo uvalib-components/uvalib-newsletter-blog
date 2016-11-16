@@ -15,14 +15,16 @@
     "juicy-html": "^1.1.0",
     "uvalib-helper-libs": "uvalib-components/uvalib-helper-libs#master",
     "app-route": "PolymerElements/app-route#^0.9.3",
-    "uvalib-footer": "uvalib-components/uvalib-footer#master",
+    "uva-footer": "uva-components/uva-footer#master",
     "paper-card": "PolymerElements/paper-card#^1.1.4",
     "uvalib-social-links": "uvalib-components/uvalib-social-links#master",
     "uvalib-analytics": "uvalib-components/uvalib-analytics#master",
     "uvalib-theme": "uvalib-components/uvalib-theme#master",
     "paper-item": "PolymerElements/paper-item#^1.2.1",
     "paper-menu-button": "PolymerElements/paper-menu-button#^1.5.2",
-    "uvalib-card": "uvalib-components/uvalib-card#master"
+    "uvalib-card": "uvalib-components/uvalib-card#master",
+    "uvalib-logos": "uvalib-components/uvalib-logos#master",
+    "uvalib-button": "uvalib-components/uvalib-button#master"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
@@ -36,7 +38,6 @@
     "lodash": "^4.15.0",
     "iron-icons": "^1.2.0",
     "uvalib-helper-libs": "master",
-    "uvalib-footer": "master",
     "uvalib-social-links": "master",
     "iron-demo-helpers": "^1.2.5",
     "uvalib-analytics": "master",

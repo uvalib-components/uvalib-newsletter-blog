@@ -1,0 +1,168 @@
+
+{
+  "status": "ok",
+  "count": 3,
+  "count_total": 3,
+  "pages": 1,
+  "posts": [
+    {
+      "id": 104,
+      "type": "uvalib_superlinkpost",
+      "slug": "faculty-tours-of-ivy-stacks",
+      "url": "https:\/\/facultynews.library.virginia.edu\/link\/faculty-tours-of-ivy-stacks\/",
+      "status": "publish",
+      "title": "FACULTY TOURS OF IVY STACKS",
+      "title_plain": "FACULTY TOURS OF IVY STACKS",
+      "content": "<p>Come see\u00a0how Ivy Stacks currently operates, in anticipation of the Ivy Stacks Addition! You&#8217;ll view\u00a0the facility, and we&#8217;ll explain how we\u00a0ensure quick retrieval of\u00a0books and articles.<\/p>\n",
+      "excerpt": "<p>Come see\u00a0how Ivy Stacks currently operates, in anticipation of the Ivy Stacks Addition! You&#8217;ll view\u00a0the facility, and we&#8217;ll explain how we\u00a0ensure quick retrieval of\u00a0books and articles.<\/p>\n",
+      "date": "2016-10-27 19:55:50",
+      "modified": "2016-10-27 19:55:50",
+      "categories": [],
+      "tags": [],
+      "author": {
+        "id": 7,
+        "slug": "jph9e",
+        "name": "Jeff",
+        "first_name": "Jeff",
+        "last_name": "Hill",
+        "nickname": "Jeff",
+        "url": "",
+        "description": ""
+      },
+      "comments": [],
+      "attachments": [
+        {
+          "id": 106,
+          "url": "https:\/\/facultynews.library.virginia.edu\/files\/IvyStacks_sm.jpg",
+          "slug": "ivystacks_sm",
+          "title": "IvyStacks_sm",
+          "description": "",
+          "caption": "",
+          "parent": 104,
+          "mime_type": "image\/jpeg",
+          "images": []
+        }
+      ],
+      "comment_count": 0,
+      "comment_status": "closed",
+      "thumbnail": null,
+      "custom_fields": {
+        "link": [
+          "http:\/\/bit.ly\/IvyStacksTours"
+        ],
+        "linkText": [
+          "SIGN UP FOR A TOUR"
+        ]
+      },
+      "thumbnail_size": "thumbnail",
+      "thumbnail_images": [],
+      "children": []
+    },
+    {
+      "id": 108,
+      "type": "uvalib_superlinkpost",
+      "slug": "the-faculty-r-lab-in-fine-arts",
+      "url": "https:\/\/facultynews.library.virginia.edu\/link\/the-faculty-r-lab-in-fine-arts\/",
+      "status": "publish",
+      "title": "THE FACULTY R-LAB IN FINE ARTS",
+      "title_plain": "THE FACULTY R-LAB IN FINE ARTS",
+      "content": "<p>We&#8217;ve opened a new reservable space in the Fiske Kimball Fine Arts Library, complete with scanning, viewing, and printing equipment,\u00a0designed for\u00a0faculty to\u00a0engage in collaborative research.<\/p>\n",
+      "excerpt": "<p>We&#8217;ve opened a new reservable space in the Fiske Kimball Fine Arts Library, complete with scanning, viewing, and printing equipment,\u00a0designed for\u00a0faculty to\u00a0engage in collaborative research.<\/p>\n",
+      "date": "2016-10-27 19:54:47",
+      "modified": "2016-10-27 20:03:38",
+      "categories": [],
+      "tags": [],
+      "author": {
+        "id": 7,
+        "slug": "jph9e",
+        "name": "Jeff",
+        "first_name": "Jeff",
+        "last_name": "Hill",
+        "nickname": "Jeff",
+        "url": "",
+        "description": ""
+      },
+      "comments": [],
+      "attachments": [
+        {
+          "id": 110,
+          "url": "https:\/\/facultynews.library.virginia.edu\/files\/FacRLab_sm.jpg",
+          "slug": "facrlab_sm",
+          "title": "FacRLab_sm",
+          "description": "",
+          "caption": "",
+          "parent": 108,
+          "mime_type": "image\/jpeg",
+          "images": []
+        }
+      ],
+      "comment_count": 0,
+      "comment_status": "closed",
+      "thumbnail": null,
+      "custom_fields": {
+        "link": [
+          "http:\/\/bit.ly\/2dMwbnt"
+        ],
+        "linkText": [
+          "LEARN MORE"
+        ]
+      },
+      "thumbnail_size": "thumbnail",
+      "thumbnail_images": [],
+      "children": []
+    },
+    {
+      "id": 100,
+      "type": "uvalib_superlinkpost",
+      "slug": "2016-user-survey-results",
+      "url": "https:\/\/facultynews.library.virginia.edu\/link\/2016-user-survey-results\/",
+      "status": "publish",
+      "title": "2016 USER SURVEY RESULTS",
+      "title_plain": "2016 USER SURVEY RESULTS",
+      "content": "<p>Every spring, we send out a survey to faculty and students about\u00a0their use of the Library&#8217;s spaces, resources, and services. Check out this year&#8217;s results, and browse\u00a0archives of past years.<\/p>\n",
+      "excerpt": "<p>Every spring, we send out a survey to faculty and students about\u00a0their use of the Library&#8217;s spaces, resources, and services. Check out this year&#8217;s results, and browse\u00a0archives of past years.<\/p>\n",
+      "date": "2016-10-27 19:54:38",
+      "modified": "2016-10-27 20:02:55",
+      "categories": [],
+      "tags": [],
+      "author": {
+        "id": 7,
+        "slug": "jph9e",
+        "name": "Jeff",
+        "first_name": "Jeff",
+        "last_name": "Hill",
+        "nickname": "Jeff",
+        "url": "",
+        "description": ""
+      },
+      "comments": [],
+      "attachments": [
+        {
+          "id": 103,
+          "url": "https:\/\/facultynews.library.virginia.edu\/files\/UserSurv_sm.jpg",
+          "slug": "usersurv_sm",
+          "title": "UserSurv_sm",
+          "description": "",
+          "caption": "",
+          "parent": 100,
+          "mime_type": "image\/jpeg",
+          "images": []
+        }
+      ],
+      "comment_count": 0,
+      "comment_status": "closed",
+      "thumbnail": null,
+      "custom_fields": {
+        "link": [
+          "http:\/\/bit.ly\/2dXr2ae"
+        ],
+        "linkText": [
+          "VIEW SURVEY RESULTS"
+        ]
+      },
+      "thumbnail_size": "thumbnail",
+      "thumbnail_images": [],
+      "children": []
+    }
+  ]
+}

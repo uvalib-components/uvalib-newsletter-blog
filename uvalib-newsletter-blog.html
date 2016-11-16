@@ -175,7 +175,6 @@
       _htmlChanged: function (neo) {
         // WARNING: potential XSS vulnerability if `html` comes from an untrusted source
         Polymer.dom(this.$.ok).innerHTML = neo;
-//        this.innerHTML = neo;
         this.updateStyles();
       }
     });
@@ -373,8 +372,8 @@
 <app-toolbar></app-toolbar>
 <app-toolbar>
 <div title spacer>
-  <div main>FACULTY NEWS</div>
-  <div sub>UVA Library Faculty News&mdash;{{_issue.title}}</div>
+  <div main>{{title}}</div>
+  <div sub>{{subTitle}}&mdash;{{_issue.title}}</div>
 </div>
 </app-toolbar>
 <app-toolbar></app-toolbar>
@@ -382,7 +381,7 @@
 <template is="dom-if" if="[[smallScreen]]">
   <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
 </template>
-<div condensed-title><a href="/news/{{_issue.slug}}">Faculty News&mdash;{{_issue.title}}</a></div>
+<div condensed-title><a href="/news/{{_issue.slug}}">{{title}}&mdash;{{_issue.title}}</a></div>
 <template is="dom-if" if="[[!smallScreen]]">
   <a href="/news/{{_issue.slug}}">Home</a>
   <paper-menu-button>
@@ -518,7 +517,7 @@
 
 </app-drawer-layout>
 
-<uvalib-analytics site-id="22" path="{{_path}}"></uvalib-analytics>
+<uvalib-analytics site-id="{{analyticsId}}" path="{{_path}}"></uvalib-analytics>
 
 </template>
 
@@ -528,6 +527,12 @@ var jQuery={noConflict:function(){}};
 Polymer({
   is: 'uvalib-newsletter-blog',
   properties: {
+    title: {
+      type:String,
+      value:"UVA Library"
+    },
+    subTitle: String,
+    analyticsId: String,
     links: {
       type:Object,
       value:{}

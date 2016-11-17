@@ -1,36 +1,46 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <meta name="theme-color" content="#C62828">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-  <title>UVa Library Staff News</title>
+    <title>UVa Library Staff News</title>
 
-  <script src="../../../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="../../../iron-ajax/iron-ajax.html">
-  <link rel="import" href="../../uvalib-newsletter-blog.html">
+    <script>
+      Polymer = {dom: 'shadow'};
 
-  <style>
+      (function() {
+        if ('registerElement' in document
+            && 'import' in document.createElement('link')
+            && 'content' in document.createElement('template')) {
+          // platform is good!
+        } else {
+          document.write( '<script src="//static.lib.virginia.edu/bower_components/webcomponentsjs/webcomponents-lite.min.js">\x3C/script>')
+        }
+      })();
+    </script>
 
-  body {
-      margin: 0;
-      font-family: "ff-dagny-web-pro", "Helvetica Neue", Arial, sans-serif;
-      background-color: #F2F1EF;
-  }
+    <link rel="import" href="../../../iron-ajax/iron-ajax.html">
+    <link rel="import" href="../../uvalib-staff-newsletter.html">
 
-  </style>
+    <style>
+      body { margin: 0; }
+      uvalib-staff-newsletter {
+        width: 100%;
+        height: auto;
+      }
+    </style>
 
-</head>
-<body unresolved>
+  </head>
+  <body unresolved>
 
-  <template is="dom-bind" id="app">
-    <iron-ajax url="posts.json" auto last-response="{{articles}}"></iron-ajax>
-    <iron-ajax url="links.json" auto last-response="{{links}}"></iron-ajax>
-    <uvalib-newsletter-blog
-      title="Staff News" sub-title="UVA Library Staff News"
-      analytics-id="26" links="[[links]]" articles="[[articles]]"></uvalib-newsletter-blog>
-  </template>
+    <template is="dom-bind" id="app">
+      <iron-ajax url="posts.json" auto last-response="{{articles}}"></iron-ajax>
+      <iron-ajax url="hoo.json" auto last-response="{{hoo}}"></iron-ajax>
 
-</body>
+      <uvalib-staff-newsletter path="/components/uvalib-newsletter-blog/demo/staff/"
+        news="{{articles}}" trivia="{{hoo}}"></uvalib-staff-newsletter>
+    </template>
+
+  </body>
 </html>

@@ -24,7 +24,8 @@
     "paper-menu-button": "PolymerElements/paper-menu-button#^1.5.2",
     "uvalib-card": "uvalib-components/uvalib-card#master",
     "uvalib-logos": "uvalib-components/uvalib-logos#master",
-    "uvalib-button": "uvalib-components/uvalib-button#master"
+    "uvalib-button": "uvalib-components/uvalib-button#master",
+    "uva-brand-style": "uva-components/uva-brand-style#master"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

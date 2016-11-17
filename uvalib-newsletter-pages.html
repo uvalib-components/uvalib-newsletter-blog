@@ -1,0 +1,268 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="../app-route/app-location.html">
+<link rel="import" href="../app-route/app-route.html">
+<link rel="import" href="../app-route/app-route-converter.html">
+
+<link rel="import" href="../iron-media-query/iron-media-query.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+
+<link rel="import" href="../paper-menu/paper-menu.html">
+
+<link rel="import" href="../uvalib-helper-libs/lodash.html">
+<link rel="import" href="../uvalib-helper-libs/uvalib-html-echo.html">
+
+<link rel="import" href="../uvalib-helper-libs/uvalib-helper-behaviors.html">
+<link rel="import" href="../uva-brand-style/uva-layout-behavior.html">
+
+<dom-module id="uvalib-newsletter-pages">
+
+<template>
+  <style is="custom-style">
+
+  :host {
+    display: block;
+  }
+
+  #articlemenu h2 {
+    margin: 0;
+    color: #E57200;
+    font-size: 1.6em;
+    margin-bottom: .5em;
+  }
+
+  #articlemenu a:link, #articlemenu a:visited, #articlemenu a:hover, #articlemenu a:active {
+    color: #E57200
+  }
+
+  #articlemenu .select-item {
+    padding: 15px;
+  }
+
+  #articlemenu .iron-selected {
+    font-weight: inherit;
+    background-color: #E57200;
+    color: #ffffff;
+  }
+
+  #articlemenu .iron-selected h2 {
+    color: #ffffff;
+  }
+
+  #articlemenu {
+    float:right;
+    width: 300px;
+    margin: 20px;
+  }
+
+  #article {
+    font-family: "ff-dagny-web-pro", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.3em;
+    margin: 20px;
+  }
+
+  #main {
+    line-height:2;
+  }
+
+  #main hr {
+    border-top: dotted 2px;
+    border-top-color: #002359;
+    width: 100%;
+  }
+
+  #content {
+    margin-top: 2.5em;
+  }
+
+  paper-menu#articlemenu {
+    padding: 0;
+  }
+
+  .wp-content {
+    --html-echo-first-letter: {
+      float: left;
+      font-size: 75px;
+      line-height: 60px;
+      padding-top: 4px;
+      padding-right: 8px;
+      padding-left: 3px;
+      font-family: font-family: "prenton", "Helvetica Neue", Arial, sans-serif;
+    };
+  }
+  </style>
+
+  <app-route route="{{route}}" pattern="/:issue" data="{{issueData}}" tail="{{_subsubRoute}}"></app-route>
+  <app-route route="{{_subsubRoute}}" pattern="/:article" data="{{articleData}}"></app-route>
+
+  <iron-media-query query="{{smallScreenQuery}}" query-matches="{{smallScreen}}"></iron-media-query>
+  <iron-media-query query="{{mediumScreenQuery}}" query-matches="{{mediumScreen}}"></iron-media-query>
+  <iron-media-query query="{{largeScreenQuery}}" query-matches="{{largeScreen}}"></iron-media-query>
+
+  <div id="main" class="vertical layout">
+    <div class="horizontal center-justified layout">
+      <div id="content" class$="{{_issmallclass(smallScreen)}}">
+
+            <paper-menu id="articlemenu" attr-for-selected="id" selected="{{_selectedArticleSlug}}">
+              <template is="dom-repeat" items="{{issue.childrenNodes}}">
+                <div class="select-item" id="{{item.slug}}">
+                  <h2><uvalib-html-echo html="{{item.title}}"></uvalib-html-echo></h2>
+                  <uvalib-html-echo html="{{item.excerpt}}"></uvalib-html-echo>
+                  <div class="more"><a href="{{item.slug}}">read more</a></div>
+                </div>
+              </template>
+            </paper-menu>
+
+            <article id="article" class$="{{_type(_article)}}">
+              <template is="dom-if" if="{{_article}}">
+                <uvalib-html-echo html="{{_article.title}}"></uvalib-html-echo>
+              </template>
+              <uvalib-html-echo class="wp-content" html="{{_currentItem.content}}"></uvalib-html-echo>
+            </article>
+
+      </div>
+    </div>
+  </div>
+
+</template>
+
+<script>
+
+Polymer({
+  is: 'uvalib-newsletter-pages',
+  behaviors: [uvabehaviors.layout,uvalibbehaviors.helpers],
+  properties: {
+    articles: {
+      type:Object,
+      value:{},
+      observer:"_articlesChanged"
+    },
+    routing: {
+      type: Boolean,
+      value: false
+    },
+    route: {
+      type: Object,
+      notify: true
+    },
+    path: {
+      type: Object,
+      notify: true
+    },
+    _subRoute: Object,
+    _subsubRoute: Object,
+    issueData: {
+      type:Object,
+      value:{issue:""}
+    },
+    articleData: {
+      type:Object,
+      value:{article:""}
+    },
+    _article: Object,
+    issue:{
+      type:Object,
+      observer:"_issueChanged"
+    },
+    issueIds: Array,
+    _issueCategories:{
+      type:Array,
+    },
+    _currentItem: Object,
+    _selectedArticleSlug:{
+      type:String,
+      observer:"_articleSelected"
+    },
+  },
+
+  observers: ['_updateArticle(articles, issueData.issue, articleData.article)'],
+
+  _type: function(article) {
+    if(article) return "article";
+    else return "issue";
+  },
+
+  _issmallclass: function(small){
+    if (small) return "small-screen";
+  },
+
+  _articlesChanged: function(){
+    this.issueIds = _.compact(_.map(this.articles.posts, function(post){ if(post.children.length>0) return {slug: post.slug, title: post.title}; }));
+  },
+
+  _articleSelected: function(){
+    if (this.routing && this._selectedArticleSlug) {
+      this.path="/"+this.issue.slug+"/"+this._selectedArticleSlug;
+      window.scroll(0,0);
+    }
+  },
+
+  _issueChanged: function(){
+    this.set('issue.childrenNodes', _.map(this.issue.children, function(childId){
+      return _.find(this.articles.posts, {id: childId});
+    }.bind(this) ));
+    var image = this._getImage(this.issue);
+    if (image && this.$.header && this.$.header.customStyle) {
+      this.$.header.customStyle['--app-header-background-front-layer'] = "background-image: url("+image+"); background-position: 50% 10%;";
+      this.$.header.updateStyles();
+    }
+    this._issueCategories;
+  },
+
+  _getImage: function(item){
+    if (item.attachments.length>0 && item.attachments[0].url){
+      return item.attachments[0].url;
+    } else {
+      return null;
+    }
+  },
+
+  _updateArticle: function(articles, issue, article){
+   if (this.routing)
+   this.debounce('update', function(){
+    if (this._subsubRoute && this._subsubRoute.path=="" ) {
+      article=this._article=null;
+      this.$.articlemenu.select(null);
+    }
+    var posts = _.orderBy(articles.posts, ['date'], ['desc']);
+    if (posts.length > 0) {
+      if (!issue && !article) {
+        // get the latest post that has children
+        this.issue = _.find(posts, function(o){
+          return o.children.length>0;
+        });
+        this.path="/"+this.issue.slug;
+
+        // or
+        // get the latest post
+        if (!this.issue)
+          this.issue = posts[0];
+        this.path="/"+this.issue.slug;
+
+      } else if (issue && !article) {
+        // get the issue being asked for
+        this._currentItem = this.issue = _.find(posts, {slug: issue});
+        // or
+        // remove issue from url if not available
+        if (!this.issue)
+          this.path = "/";
+      } else if (issue && article) {
+        // get the issue and article being asked for
+        this.issue = _.find(posts, {slug: issue});
+        this._currentItem = this._article = _.find(posts, {slug: article});
+        // or
+        // remove article from url if not available
+        if (!this.issue)
+          this.path = "/";
+        else if (!this._article)
+          this.path = "/"+this.issue.slug;
+      }
+    }
+  }, 100);
+}
+
+
+});
+</script>
+
+</dom-module>

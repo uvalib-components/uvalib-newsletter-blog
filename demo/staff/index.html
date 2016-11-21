@@ -7,7 +7,7 @@
     <title>UVa Library Staff News</title>
 
     <script>
-      Polymer = {dom: 'shadow'};
+      //Polymer = {dom: 'shadow'};
 
       (function() {
         if ('registerElement' in document
@@ -38,7 +38,7 @@
       <iron-ajax url="posts.json" auto last-response="{{articles}}"></iron-ajax>
       <iron-ajax url="hoo.json" auto last-response="{{hoo}}"></iron-ajax>
 
-      <uvalib-staff-newsletter path="/components/uvalib-newsletter-blog/demo/staff/"
+      <uvalib-staff-newsletter root-path="/components/uvalib-newsletter-blog/demo/staff/"
         news="{{articles}}" trivia="{{hoo}}"></uvalib-staff-newsletter>
     </template>
 

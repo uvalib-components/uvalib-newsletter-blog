@@ -14,6 +14,9 @@
 <link rel="import" href="../uvalib-theme/uvalib-theme.html">
 <link rel="import" href="uvalib-newsletter-pages.html">
 
+<link rel="import" href="../uvalib-logos/uvalib-logo.html">
+<link rel="import" href="../uva-footer/uva-footer.html">
+
 <dom-module id="uvalib-staff-newsletter">
 
 <template>
@@ -45,6 +48,10 @@
   .card-content {}
   .card-actions {}
 
+
+  uva-footer {
+    background-color: var(--color-primary-orange);
+  }
   </style>
 
   <app-location route="{{_route}}"></app-location>
@@ -86,6 +93,10 @@
           </div>
       </uvalib-card>
     </div>
+
+    <uva-footer class="lib" logo-override>
+      <uvalib-logo text-only stacked reverse class="logo" style="width:100%; color:white;"></uvalib-logo>
+    </uva-footer>
 
   </uvalib-alt-page>
 

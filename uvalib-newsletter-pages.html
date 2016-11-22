@@ -113,6 +113,34 @@
       font-family: font-family: "prenton", "Helvetica Neue", Arial, sans-serif;
     };
   }
+
+  .card-header {
+    margin: 1em;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
+
+  paper-card.superlinks {
+    height: auto !important;
+    --paper-card-actions: {
+      font-weight: strong;
+      background-color: #E57200;
+      color: #ffffff;
+    };
+  }
+
+
+  #content.small-screen {
+    max-width: 425px;
+  }
+
+
+  uvalib-card {
+    --paper-card-header-image: {
+      height: 100%;
+    }
+  }
   </style>
 
   <app-route route="{{route}}" pattern="/:issue" data="{{_issueData}}" tail="{{_articleRoute}}" active="{{_isIssue}}"></app-route>

@@ -8,7 +8,7 @@
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 
 <link rel="import" href="../uvalib-page/uvalib-alt-page.html">
-<link rel="import" href="../uvalib-card/uvalib-card.html">
+<link rel="import" href="../uvalib-card/uvalib-alt-card.html">
 <link rel="import" href="../uvalib-button/uvalib-button.html">
 <link rel="import" href="../uvalib-helper-libs/uvalib-helper-behaviors.html">
 <link rel="import" href="../uvalib-theme/uvalib-theme.html">
@@ -28,15 +28,22 @@
   uvalib-card {
     @apply(--layout-flex);
     margin: 20px;
+    min-width: 400px;
     --paper-card-header-image: {
       height: 100%;
-    }
+    };
   }
   hr {
     border-top: dotted 2px;
     border-top-color: var(--color-primary-blue);
     width: 100%;
   }
+
+  .card-header {
+    padding-left: 15px;
+  }
+  .card-content {}
+  .card-actions {}
 
   </style>
 
@@ -61,21 +68,19 @@
     <hr />
 
     <div id="cardContainer" hidden$="{{_hooActive}}">
-      <uvalib-card id="hoo" horizontal on-tap="_openlink"
+      <uvalib-card id="hoo" horizontal on-tap="_openlink" heading="Guess Hoo?"
           href="{{rootPath}}hoo/fall-issue/information-visualization-specialist-will-rourk"
           image="https://staffnews.staffweb.lib.virginia.edu/wp-content/uploads/sites/3/2016/11/guesshoo.png">
-          <div class="card-header">Guess Hoo?</div>
           <div class="card-content"><p>His eclectic musical talents can be heard around town in two bands.</p></div>
           <div class="card-actions">
             <uvalib-button href="{{rootPath}}hoo/fall-issue/information-visualization-specialist-will-rourk">Find Out</uvalib-button>
           </div>
       </uvalib-card>
 
-      <uvalib-card id="comego" horizontal on-tap="_openlink"
+      <uvalib-card id="comego" horizontal on-tap="_openlink" heading="Staff Arrivals/Departures"
           href="https://staffweb.lib.virginia.edu/open-positions-and-selections/"
           image="https://staffnews.staffweb.lib.virginia.edu/wp-content/uploads/sites/3/2016/11/arrivals_departures.png">
-          <div class="card-header">Staff Arrivals / Departures</div>
-          <div class="card-content"></div>
+          <div class="card-content"><p>See who has been arriving and departing the Library</p></div>
           <div class="card-actions">
             <uvalib-button>Read More</uvalib-button>
           </div>

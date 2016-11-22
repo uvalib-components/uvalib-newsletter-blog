@@ -11,12 +11,13 @@
 <link rel="import" href="../uvalib-card/uvalib-card.html">
 <link rel="import" href="../uvalib-button/uvalib-button.html">
 <link rel="import" href="../uvalib-helper-libs/uvalib-helper-behaviors.html">
+<link rel="import" href="../uvalib-theme/uvalib-theme.html">
 <link rel="import" href="uvalib-newsletter-pages.html">
 
 <dom-module id="uvalib-staff-newsletter">
 
 <template>
-  <style is="custom-style">
+  <style is="custom-style" include="uvalib-theme">
   :host {
     display: block;
   }
@@ -27,6 +28,11 @@
   uvalib-card {
     @apply(--layout-flex);
     margin: 20px;
+  }
+  hr {
+    border-top: dotted 2px;
+    border-top-color: var(--color-primary-blue);
+    width: 100%;
   }
   </style>
 

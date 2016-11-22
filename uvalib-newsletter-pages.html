@@ -224,6 +224,7 @@ Polymer({
   },
 
   _selectIssue: function(issue){
+    console.log('selecting Issue: '+issue);
     this.selectedIssue = _.find(this.issues,['slug',issue]);
   },
 

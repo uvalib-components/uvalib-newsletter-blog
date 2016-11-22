@@ -28,14 +28,16 @@
   uvalib-card {
     @apply(--layout-flex);
     margin: 20px;
+    --paper-card-header-image: {
+      height: 100%;
+    }
   }
   hr {
-
     border-top: dotted 2px;
     border-top-color: var(--color-primary-blue);
     width: 100%;
-
   }
+
   </style>
 
   <app-location route="{{_route}}"></app-location>
@@ -52,7 +54,7 @@
     </div>
 
     <div id="hoo" hidden$="{{!_hooActive}}">
-      <uvalib-newsletter-pages name="hoo" items="{{trivia}}" path="{{_subPathHoo}}" route="{{_hooRoute}}"
+      <uvalib-newsletter-pages minimal-menu name="hoo" items="{{trivia}}" path="{{_subPathHoo}}" route="{{_hooRoute}}"
                     root-path="{{rootPath}}hoo" on-pushing-items="grabHoo"></uvalib-newsletter-pages>
     </div>
 
@@ -100,8 +102,16 @@ Polymer({
       type: Boolean,
       observer: '_init'
     },
-    randomTrivia: Object
+    randomTrivia: Object,
+    _route: {
+      type: Object,
+    },
+    _count: {
+      type: Number,
+      value: 0
+    }
   },
+  observers: ['_routeCount(_route.path)'],
   _init: function(){
     if (this._initActive)
       this.set('_route.path', this.rootPath+"news");
@@ -114,6 +124,15 @@ Polymer({
       }
     });
   },
+  _resetScroll: function(){
+    window.scroll(0,450);
+  },
+  _routeCount: function(){
+    this.debounce('routecounter', function(){
+      this._count = this._count+1;
+      console.log('youve been routed '+this._count+' times!')
+    }.bind(this), 2000);
+  }
 
 });
 

@@ -28,13 +28,14 @@
 
   #articlemenu h2 {
     margin: 0;
-    color: #E57200;
+    color: var(--color-primary-orange);
     font-size: 1.6em;
     margin-bottom: .5em;
+
   }
 
   #articlemenu a:link, #articlemenu a:visited, #articlemenu a:hover, #articlemenu a:active {
-    color: #E57200
+    color: var(--color-primary-orange);
   }
 
   #articlemenu .select-item {
@@ -43,8 +44,8 @@
 
   #articlemenu .iron-selected {
     font-weight: inherit;
-    background-color: #E57200;
-    color: #ffffff;
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
   }
 
   #articlemenu .iron-selected h2 {
@@ -55,6 +56,7 @@
     float:right;
     width: 300px;
     margin: 20px;
+    background-color: var(--color-light-gray);
   }
 
   #article, #issue {
@@ -128,9 +130,15 @@
     <paper-menu id="articlemenu" attr-for-selected="id" selected="{{_selectedArticleSlug}}">
       <template is="dom-repeat" items="{{articles}}">
         <div class="select-item" id="{{item.slug}}">
-          <h2 inner-h-t-m-l="{{item.title}}"></uvalib-html-echo></h2>
-          <uvalib-html-echo html="{{item.excerpt}}"></uvalib-html-echo>
-          <div class="more"><a href="{{item.slug}}">read more</a></div>
+          <template is="dom-if" if="{{!minimalMenu}}">
+            <h2 inner-h-t-m-l="{{item.title}}"></uvalib-html-echo></h2>
+            <div inner-h-t-m-l="{{item.excerpt}}"></div>
+            <div class="more"><a href="{{item.slug}}">Read More</a></div>
+          </template>
+          <template is="dom-if" if="{{minimalMenu}}">
+            <div inner-h-t-m-l="{{item.excerpt}}"></div>
+            <div class="more"><a href="{{item.slug}}">Guess Hoo</a></div>
+          </template>
         </div>
       </template>
     </paper-menu>
@@ -195,6 +203,10 @@ Polymer({
     _selectedArticleSlug: {
       type: String,
       observer: '_changeArticle'
+    },
+    minimalMenu: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -239,14 +251,14 @@ Polymer({
     this.debounce('selectIssue', function(){
       console.log('selecting Issue: '+issue);
       this.selectedIssue = _.find(this.issues,['slug',issue]);
-    });
+    }, 100);
   },
 
   _selectArticle: function(article){
     this.debounce('selectArticle', function(){
       console.log('selecting Article: '+article);
       this.selectedArticle = _.find(this.articles,['slug',article]);
-    });
+    }, 100);
   },
 
   _changeArticle: function(){

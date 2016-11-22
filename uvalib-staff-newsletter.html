@@ -82,7 +82,7 @@
           image="https://staffnews.staffweb.lib.virginia.edu/wp-content/uploads/sites/3/2016/11/arrivals_departures.png">
           <div class="card-content"><p>See who has been arriving and departing the Library</p></div>
           <div class="card-actions">
-            <uvalib-button>Read More</uvalib-button>
+            <uvalib-button href="https://staffweb.lib.virginia.edu/open-positions-and-selections/">Read More</uvalib-button>
           </div>
       </uvalib-card>
     </div>
@@ -137,7 +137,7 @@ Polymer({
       this._count = this._count+1;
       if (this._count > 2) this._resetScroll();
       console.log('youve been routed '+this._count+' times!')
-    }.bind(this), 500);
+    }.bind(this), 200);
   }
 
 });

@@ -135,8 +135,9 @@ Polymer({
   _routeCount: function(){
     this.debounce('routecounter', function(){
       this._count = this._count+1;
+      if (this._count > 2) this._resetScroll();
       console.log('youve been routed '+this._count+' times!')
-    }.bind(this), 2000);
+    }.bind(this), 500);
   }
 
 });

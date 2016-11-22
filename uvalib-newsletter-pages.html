@@ -243,10 +243,14 @@ Polymer({
   },
 
   _selectArticle: function(article){
-    this.selectedArticle = _.find(this.articles,['slug',article]);
+    this.debounce('selectArticle', function(){
+      console.log('selecting Article: '+article);
+      this.selectedArticle = _.find(this.articles,['slug',article]);
+    });
   },
 
   _changeArticle: function(){
+    console.log('setting the article path to: '+this._selectedArticleSlug);
     this.set('_articleData.article', this._selectedArticleSlug)
   }
 });

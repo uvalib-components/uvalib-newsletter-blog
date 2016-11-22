@@ -57,6 +57,11 @@
     margin: 20px;
   }
 
+  #article, #issue {
+    font-size: 1.3em;
+    margin: 20px;
+  }
+
   #content hr {
     border-top: dotted 2px;
     border-top-color: #002359;
@@ -73,10 +78,17 @@
   }
 
   #content {
-    min-height: 1700px;
     margin-top: 2.5em;
     line-height:2;
     max-width: 970px;
+  }
+
+  #content.small-screen {
+    @apply(--layout-vertical-reverse);
+  }
+
+  .small-screen paper-menu {
+    width: 90% !important;
   }
 
   h2 {

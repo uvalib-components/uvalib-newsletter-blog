@@ -63,9 +63,25 @@
     width: 100%;
   }
 
+  #main {
+    @apply(--layout-vertical);
+  }
+
+  #center {
+    @apply(--layout-center-justified);
+    @apply(--layout-horizontal);
+  }
+
   #content {
+    min-height: 1700px;
     margin-top: 2.5em;
     line-height:2;
+    max-width: 970px;
+  }
+
+  h2 {
+    @apply(--font-headline);
+    color: var(--color-primary-blue);
   }
 
   paper-menu#articlemenu {
@@ -77,7 +93,7 @@
       float: left;
       font-size: 75px;
       line-height: 60px;
-      padding-top: 4px;
+      padding-top: 0;
       padding-right: 8px;
       padding-left: 3px;
       font-family: font-family: "prenton", "Helvetica Neue", Arial, sans-serif;
@@ -93,12 +109,14 @@
   <iron-media-query query="{{mediumScreenQuery}}" query-matches="{{mediumScreen}}"></iron-media-query>
   <iron-media-query query="{{largeScreenQuery}}" query-matches="{{largeScreen}}"></iron-media-query>
 
+<div id="main" class="vertical layout">
+<div id="center" class="horizontal center-justified layout">
   <div id="content" class$="{{_issmallclass(smallScreen)}}">
 
     <paper-menu id="articlemenu" attr-for-selected="id" selected="{{_selectedArticleSlug}}">
-      <template is="dom-repeat" items="{{_articles}}">
+      <template is="dom-repeat" items="{{articles}}">
         <div class="select-item" id="{{item.slug}}">
-          <h2><uvalib-html-echo html="{{item.title}}"></uvalib-html-echo></h2>
+          <h2 inner-h-t-m-l="{{item.title}}"></uvalib-html-echo></h2>
           <uvalib-html-echo html="{{item.excerpt}}"></uvalib-html-echo>
           <div class="more"><a href="{{item.slug}}">read more</a></div>
         </div>
@@ -106,7 +124,7 @@
     </paper-menu>
 
     <article id="article" hidden$="{{!selectedArticle}}">
-        <uvalib-html-echo html="{{selectedArticle.title}}"></uvalib-html-echo>
+        <h2 inner-h-t-m-l="{{selectedArticle.title}}"></h2>
         <uvalib-html-echo class="wp-content" html="{{selectedArticle.content}}"></uvalib-html-echo>
     </article>
 
@@ -115,6 +133,7 @@
     </article>
 
   </div>
+</div></div>
 
 </template>
 
@@ -125,7 +144,7 @@ Polymer({
   behaviors: [uvabehaviors.layout,uvalibbehaviors.helpers],
   properties: {
     rootPath: String,
-    articles: {
+    items: {
       type:Object,
       value:{},
       observer:"_init"
@@ -151,13 +170,15 @@ Polymer({
       value: null,
       notify: true
     },
-    _issues: {
+    issues: {
       type: Array,
-      value: []
+      value: [],
+      notify: true
     },
-    _articles: {
+    articles: {
       type: Array,
-      value: []
+      value: [],
+      notify: true
     },
     _selectedArticleSlug: {
       type: String,
@@ -165,8 +186,8 @@ Polymer({
     }
   },
 
-  observers: ['_init(_issueData.issue, _articleData.article, _initActive, articles)',
-              '_parseIssuesArticles(articles)',
+  observers: ['_init(_issueData.issue, _articleData.article, _initActive, items)',
+              '_parseIssuesArticles(items)',
               '_selectArticle(_articleData.article)',
               '_selectIssue(_issueData.issue)'],
   _init: function(){
@@ -184,7 +205,7 @@ Polymer({
   },
 
   _latestIssue: function(){
-    return _.head(this._issues);
+    return _.head(this.issues);
   },
 
   _issmallclass: function(small){
@@ -192,21 +213,22 @@ Polymer({
   },
 
   _parseIssuesArticles: function(articles){
-    this._issues = [];
-    this._articles = [];
-    var posts = _.orderBy(this.articles.posts, ['date'], ['desc'])
+    this.issues = [];
+    this.articles = [];
+    var posts = _.orderBy(this.items.posts, ['date'], ['desc'])
     .forEach(function(post){
-      if (post.children.length>0) this.push('_issues',post);
-      else this.push('_articles',post);
+      if (post.children.length>0) this.push('issues',post);
+      else this.push('articles',post);
+      this.fire('pushing-items');
     }.bind(this));
   },
 
   _selectIssue: function(issue){
-    this.selectedIssue = _.find(this._issues,['slug',issue]);
+    this.selectedIssue = _.find(this.issues,['slug',issue]);
   },
 
   _selectArticle: function(article){
-    this.selectedArticle = _.find(this._articles,['slug',article]);
+    this.selectedArticle = _.find(this.articles,['slug',article]);
   },
 
   _changeArticle: function(){

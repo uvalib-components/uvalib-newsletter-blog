@@ -5,7 +5,12 @@
 <link rel="import" href="../app-route/app-route.html">
 <link rel="import" href="../app-route/app-route-converter.html">
 
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+
 <link rel="import" href="../uvalib-page/uvalib-alt-page.html">
+<link rel="import" href="../uvalib-card/uvalib-card.html">
+<link rel="import" href="../uvalib-button/uvalib-button.html">
+<link rel="import" href="../uvalib-helper-libs/uvalib-helper-behaviors.html">
 <link rel="import" href="uvalib-newsletter-pages.html">
 
 <dom-module id="uvalib-staff-newsletter">
@@ -15,6 +20,14 @@
   :host {
     display: block;
   }
+  #cardContainer {
+    @apply(--layout-horizontal);
+    @apply(--layout-wrap);
+  }
+  uvalib-card {
+    @apply(--layout-flex);
+    margin: 20px;
+  }
   </style>
 
   <app-location route="{{_route}}"></app-location>
@@ -22,17 +35,41 @@
   <app-route route="{{_route}}" pattern="{{rootPath}}hoo" tail="{{_hooRoute}}" active="{{_hooActive}}"></app-route>
   <app-route route="{{_route}}" pattern="{{rootPath}}" active="{{_initActive}}"></app-route>
 
-  <uvalib-alt-page title="Staff News" sub-title="UVA Library Staff News &mdash; Fall 2016"
+  <uvalib-alt-page root-path="{{rootPath}}" title="Staff News" sub-title="UVA Library Staff News &mdash; Fall 2016"
                   image="https://staffnews.staffweb.lib.virginia.edu/wp-content/uploads/sites/3/2016/11/header_image_rotunda.jpg">
 
     <div id="news" hidden$="{{!_newsActive}}">
-      <uvalib-newsletter-pages name="news" articles="{{news}}" path="{{_subPathNews}}" route="{{_newsRoute}}"
+      <uvalib-newsletter-pages name="news" items="{{news}}" path="{{_subPathNews}}" route="{{_newsRoute}}"
                     root-path="{{rootPath}}news"></uvalib-newsletter-pages>
     </div>
-    
+
     <div id="hoo" hidden$="{{!_hooActive}}">
-      <uvalib-newsletter-pages name="hoo" articles="{{trivia}}" path="{{_subPathHoo}}" route="{{_hooRoute}}"
-                    root-path="{{rootPath}}hoo"></uvalib-newsletter-pages>
+      <uvalib-newsletter-pages name="hoo" items="{{trivia}}" path="{{_subPathHoo}}" route="{{_hooRoute}}"
+                    root-path="{{rootPath}}hoo" on-pushing-items="grabHoo"></uvalib-newsletter-pages>
+    </div>
+
+    <hr />
+
+    <div id="cardContainer" hidden$="{{_hooActive}}">
+      <uvalib-card id="hoo" horizontal on-tap="_openlink"
+          href="{{rootPath}}hoo/fall-issue/information-visualization-specialist-will-rourk"
+          image="https://staffnews.staffweb.lib.virginia.edu/wp-content/uploads/sites/3/2016/11/guesshoo.png">
+          <div class="card-header">Guess Hoo?</div>
+          <div class="card-content"><p>His eclectic musical talents can be heard around town in two bands.</p></div>
+          <div class="card-actions">
+            <uvalib-button href="{{rootPath}}hoo/fall-issue/information-visualization-specialist-will-rourk">Find Out</uvalib-button>
+          </div>
+      </uvalib-card>
+
+      <uvalib-card id="comego" horizontal on-tap="_openlink"
+          href="https://staffweb.lib.virginia.edu/open-positions-and-selections/"
+          image="https://staffnews.staffweb.lib.virginia.edu/wp-content/uploads/sites/3/2016/11/arrivals_departures.png">
+          <div class="card-header">Staff Arrivals / Departures</div>
+          <div class="card-content"></div>
+          <div class="card-actions">
+            <uvalib-button>Read More</uvalib-button>
+          </div>
+      </uvalib-card>
     </div>
 
   </uvalib-alt-page>
@@ -43,6 +80,7 @@
 
 Polymer({
   is: 'uvalib-staff-newsletter',
+  behaviors: [uvalibbehaviors.helpers],
   properties: {
     rootPath: {
       type:String,
@@ -53,7 +91,8 @@ Polymer({
     _initActive: {
       type: Boolean,
       observer: '_init'
-    }
+    },
+    randomTrivia: Object
   },
   _init: function(){
     if (this._initActive)
@@ -66,7 +105,8 @@ Polymer({
         this.set('_route.path', this.rootPath);
       }
     });
-  }
+  },
+
 });
 
 </script>

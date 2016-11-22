@@ -188,8 +188,8 @@ Polymer({
 
   observers: ['_init(_issueData.issue, _articleData.article, _initActive, items)',
               '_parseIssuesArticles(items)',
-              '_selectArticle(_articleData.article)',
-              '_selectIssue(_issueData.issue)'],
+              '_selectArticle(_articleData.article, articles)',
+              '_selectIssue(_issueData.issue, issues)'],
   _init: function(){
     this.debounce('init', function(){
       console.log('init');
@@ -224,8 +224,10 @@ Polymer({
   },
 
   _selectIssue: function(issue){
-    console.log('selecting Issue: '+issue);
-    this.selectedIssue = _.find(this.issues,['slug',issue]);
+    this.debounce('selectIssue', function(){
+      console.log('selecting Issue: '+issue);
+      this.selectedIssue = _.find(this.issues,['slug',issue]);
+    });
   },
 
   _selectArticle: function(article){

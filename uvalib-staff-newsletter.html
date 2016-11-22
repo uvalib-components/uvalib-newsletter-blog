@@ -5,6 +5,7 @@
 <link rel="import" href="../app-route/app-route.html">
 <link rel="import" href="../app-route/app-route-converter.html">
 
+<link rel="import" href="../uvalib-page/uvalib-alt-page.html">
 <link rel="import" href="uvalib-newsletter-pages.html">
 
 <dom-module id="uvalib-staff-newsletter">
@@ -21,14 +22,20 @@
   <app-route route="{{_route}}" pattern="{{rootPath}}hoo" tail="{{_hooRoute}}" active="{{_hooActive}}"></app-route>
   <app-route route="{{_route}}" pattern="{{rootPath}}" active="{{_initActive}}"></app-route>
 
-  <div id="news" hidden$="{{!_newsActive}}">
-    News
-    <uvalib-newsletter-pages name="news" articles="{{news}}" path="{{_subPathNews}}" route="{{_newsRoute}}" root-path="{{rootPath}}news"></uvalib-newsletter-pages>
-  </div>
-  <div id="hoo" hidden$="{{!_hooActive}}">
-    Hoo
-    <uvalib-newsletter-pages name="hoo" articles="{{trivia}}" path="{{_subPathHoo}}" route="{{_hooRoute}}" root-path="{{rootPath}}hoo"></uvalib-newsletter-pages>
-  </div>
+  <uvalib-alt-page title="Staff News" sub-title="UVA Library Staff News &mdash; Fall 2016"
+                  image="https://staffnews.staffweb.lib.virginia.edu/wp-content/uploads/sites/3/2016/11/header_image_rotunda.jpg">
+
+    <div id="news" hidden$="{{!_newsActive}}">
+      <uvalib-newsletter-pages name="news" articles="{{news}}" path="{{_subPathNews}}" route="{{_newsRoute}}"
+                    root-path="{{rootPath}}news"></uvalib-newsletter-pages>
+    </div>
+    
+    <div id="hoo" hidden$="{{!_hooActive}}">
+      <uvalib-newsletter-pages name="hoo" articles="{{trivia}}" path="{{_subPathHoo}}" route="{{_hooRoute}}"
+                    root-path="{{rootPath}}hoo"></uvalib-newsletter-pages>
+    </div>
+
+  </uvalib-alt-page>
 
 </template>
 

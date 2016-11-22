@@ -14,14 +14,16 @@
 
 <link rel="import" href="../uvalib-helper-libs/uvalib-helper-behaviors.html">
 <link rel="import" href="../uva-brand-style/uva-layout-behavior.html">
+<link rel="import" href="../uvalib-theme/uvalib-theme.html">
 
 <dom-module id="uvalib-newsletter-pages">
 
 <template>
-  <style is="custom-style">
+  <style is="custom-style" include="uvalib-theme">
 
   :host {
     display: block;
+    height: auto;
   }
 
   #articlemenu h2 {
@@ -55,17 +57,7 @@
     margin: 20px;
   }
 
-  #article {
-    font-family: "ff-dagny-web-pro", "Helvetica Neue", Arial, sans-serif;
-    font-size: 1.3em;
-    margin: 20px;
-  }
-
-  #main {
-    line-height:2;
-  }
-
-  #main hr {
+  #content hr {
     border-top: dotted 2px;
     border-top-color: #002359;
     width: 100%;
@@ -73,6 +65,7 @@
 
   #content {
     margin-top: 2.5em;
+    line-height:2;
   }
 
   paper-menu#articlemenu {
@@ -100,29 +93,27 @@
   <iron-media-query query="{{mediumScreenQuery}}" query-matches="{{mediumScreen}}"></iron-media-query>
   <iron-media-query query="{{largeScreenQuery}}" query-matches="{{largeScreen}}"></iron-media-query>
 
-  <div id="main" class="vertical layout">
-    <div class="horizontal center-justified layout">
-      <div id="content" class$="{{_issmallclass(smallScreen)}}">
+  <div id="content" class$="{{_issmallclass(smallScreen)}}">
 
-            <paper-menu id="articlemenu" attr-for-selected="id" selected="{{_selectedArticle.slug}}">
-              <template is="dom-repeat" items="{{_issue}}">
-                <div class="select-item" id="{{item.slug}}">
-                  <h2><uvalib-html-echo html="{{item.title}}"></uvalib-html-echo></h2>
-                  <uvalib-html-echo html="{{item.excerpt}}"></uvalib-html-echo>
-                  <div class="more"><a href="{{item.slug}}">read more</a></div>
-                </div>
-              </template>
-            </paper-menu>
+    <paper-menu id="articlemenu" attr-for-selected="id" selected="{{_selectedArticleSlug}}">
+      <template is="dom-repeat" items="{{_articles}}">
+        <div class="select-item" id="{{item.slug}}">
+          <h2><uvalib-html-echo html="{{item.title}}"></uvalib-html-echo></h2>
+          <uvalib-html-echo html="{{item.excerpt}}"></uvalib-html-echo>
+          <div class="more"><a href="{{item.slug}}">read more</a></div>
+        </div>
+      </template>
+    </paper-menu>
 
-            <article id="article" class$="{{_type(_article)}}">
-              <template is="dom-if" if="{{_article}}">
-                <uvalib-html-echo html="{{_article.title}}"></uvalib-html-echo>
-              </template>
-              <uvalib-html-echo class="wp-content" html="{{_currentItem.content}}"></uvalib-html-echo>
-            </article>
+    <article id="article" hidden$="{{!selectedArticle}}">
+        <uvalib-html-echo html="{{selectedArticle.title}}"></uvalib-html-echo>
+        <uvalib-html-echo class="wp-content" html="{{selectedArticle.content}}"></uvalib-html-echo>
+    </article>
 
-      </div>
-    </div>
+    <article id="issue" hidden$="{{selectedArticle}}">
+      <uvalib-html-echo class="wp-content" html="{{selectedIssue.content}}"></uvalib-html-echo>
+    </article>
+
   </div>
 
 </template>
@@ -150,13 +141,15 @@ Polymer({
     _data: {
       type: Object
     },
-    _selectedArticle: {
+    selectedArticle: {
       type: Object,
-      value: null
+      value: null,
+      notify: true
     },
-    _selectedIssue: {
+    selectedIssue: {
       type: Object,
-      value: null
+      value: null,
+      notify: true
     },
     _issues: {
       type: Array,
@@ -166,7 +159,10 @@ Polymer({
       type: Array,
       value: []
     },
-
+    _selectedArticleSlug: {
+      type: String,
+      observer: '_changeArticle'
+    }
   },
 
   observers: ['_init(_issueData.issue, _articleData.article, _initActive, articles)',
@@ -206,13 +202,16 @@ Polymer({
   },
 
   _selectIssue: function(issue){
-    this._selectedIssue = _.find(this._issues,['slug',issue]);
+    this.selectedIssue = _.find(this._issues,['slug',issue]);
   },
 
   _selectArticle: function(article){
-    this._selectedArticle = _.find(this._articles,['slug',article]);
-  }
+    this.selectedArticle = _.find(this._articles,['slug',article]);
+  },
 
+  _changeArticle: function(){
+    this.set('_articleData.article', this._selectedArticleSlug)
+  }
 });
 </script>
 

@@ -272,8 +272,8 @@ Polymer({
       else tmp2.push(post);
       this.fire('pushing-items');
     }.bind(this));
-    this.issues = tmp1;
-    this.articles = tmp2;
+    this.set('issues',tmp1);
+    this.set('articles',tmp2);
   },
 
   _selectIssue: function(issue){

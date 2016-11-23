@@ -17,6 +17,8 @@
 <link rel="import" href="../uvalib-logos/uvalib-logo.html">
 <link rel="import" href="../uva-footer/uva-footer.html">
 
+<link rel="import" href="lodash.html">
+
 <dom-module id="uvalib-staff-newsletter">
 
 <template>
@@ -68,21 +70,23 @@
     </div>
 
     <div id="hoo" hidden$="{{!_hooActive}}">
-      <uvalib-newsletter-pages articles="{{hooArticles}}" minimal-menu name="hoo" items="{{trivia}}" path="{{_subPathHoo}}" route="{{_hooRoute}}"
+      <uvalib-newsletter-pages articles="{{_hooArticles}}" minimal-menu name="hoo" items="{{trivia}}" path="{{_subPathHoo}}" route="{{_hooRoute}}"
                     root-path="{{rootPath}}hoo" on-pushing-items="grabHoo"></uvalib-newsletter-pages>
     </div>
 
     <hr />
 
     <div id="cardContainer" hidden$="{{_hooActive}}">
-      <uvalib-card id="hoo" horizontal on-tap="_openlink" heading="Guess Hoo?"
-          href="{{rootPath}}hoo/fall-issue/information-visualization-specialist-will-rourk"
-          image="https://staffnews.staffweb.lib.virginia.edu/wp-content/uploads/sites/3/2016/11/guesshoo.png">
-          <div class="card-content"><p>His eclectic musical talents can be heard around town in two bands.</p></div>
-          <div class="card-actions">
-            <uvalib-button href="{{rootPath}}hoo/fall-issue/information-visualization-specialist-will-rourk">Find Out</uvalib-button>
-          </div>
-      </uvalib-card>
+      <template is="dom-repeat" items="{{_rand(_hooArticles)}}">
+        <uvalib-card id="hoo" horizontal on-tap="_openlink" heading="Guess Hoo?"
+            href="{{rootPath}}hoo/fall-issue/{{item.slug}}"
+            image="https://staffnews.staffweb.lib.virginia.edu/wp-content/uploads/sites/3/2016/11/guesshoo.png">
+            <div class="card-content" inner-h-t-m-l="{{item.excerpt}}"></div>
+            <div class="card-actions">
+              <uvalib-button href="{{rootPath}}hoo/fall-issue/{{item.slug}}">Find Out</uvalib-button>
+            </div>
+        </uvalib-card>
+      </template>
 
       <uvalib-card id="comego" horizontal on-tap="_openlink" heading="Staff Arrivals/Departures"
           href="https://staffweb.lib.virginia.edu/open-positions-and-selections/"
@@ -127,18 +131,23 @@ Polymer({
     _count: {
       type: Number,
       value: 0
-    }
+    },
+    _hooArticles: {
+      type: Array,
+      value: null
+    },
   },
-  observers: ['_routeCount(_route.path)',
-              '_randomHoo(hooArticles)'],
-  _ranndomHoo: function(hoos){
-    this.debounce('hoorandom', function(){
-      this.randomTrivia = this._random(hoos);
-    },200);
-  },
+  observers: ['_routeCount(_route.path)'],
   _init: function(){
     if (this._initActive)
       this.set('_route.path', this.rootPath+"news");
+  },
+  _rand: function(list){
+    if(_.isArray(list))
+      if (list.length>1) return [ list[_.random(list.length-1)] ]
+      else if (list.length=1) return list;
+      else return [];
+    else return [];
   },
   ready: function() {
     this.async(function() {

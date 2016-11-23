@@ -26,7 +26,8 @@
     "uvalib-logos": "uvalib-components/uvalib-logos#master",
     "uvalib-button": "uvalib-components/uvalib-button#master",
     "uva-brand-style": "uva-components/uva-brand-style#master",
-    "uvalib-page": "uvalib-components/uvalib-page#master"
+    "uvalib-page": "uvalib-components/uvalib-page#master",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.4.3"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

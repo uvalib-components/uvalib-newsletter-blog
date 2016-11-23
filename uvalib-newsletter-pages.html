@@ -265,14 +265,15 @@ Polymer({
   },
 
   _parseIssuesArticles: function(articles){
-    this.issues = [];
-    this.articles = [];
+    var tmp1 = []; var tmp2 = [];
     var posts = _.orderBy(this.items.posts, ['date'], ['desc'])
     .forEach(function(post){
-      if (post.children.length>0) this.push('issues',post);
-      else this.push('articles',post);
+      if (post.children.length>0) tmp1.push(post);
+      else tmp2.push(post);
       this.fire('pushing-items');
     }.bind(this));
+    this.issues = tmp1;
+    this.articles = tmp2;
   },
 
   _selectIssue: function(issue){

@@ -68,7 +68,7 @@
     </div>
 
     <div id="hoo" hidden$="{{!_hooActive}}">
-      <uvalib-newsletter-pages minimal-menu name="hoo" items="{{trivia}}" path="{{_subPathHoo}}" route="{{_hooRoute}}"
+      <uvalib-newsletter-pages articles="{{hooArticles}}" minimal-menu name="hoo" items="{{trivia}}" path="{{_subPathHoo}}" route="{{_hooRoute}}"
                     root-path="{{rootPath}}hoo" on-pushing-items="grabHoo"></uvalib-newsletter-pages>
     </div>
 
@@ -118,7 +118,9 @@ Polymer({
       type: Boolean,
       observer: '_init'
     },
-    randomTrivia: Object,
+    randomTrivia: {
+      type: Object,
+    },
     _route: {
       type: Object,
     },
@@ -127,7 +129,13 @@ Polymer({
       value: 0
     }
   },
-  observers: ['_routeCount(_route.path)'],
+  observers: ['_routeCount(_route.path)',
+              '_randomHoo(hooArticles)'],
+  _ranndomHoo: function(hoos){
+    this.debounce('hoorandom', function(){
+      this.randomTrivia = this._random(hoos);
+    },200);
+  },
   _init: function(){
     if (this._initActive)
       this.set('_route.path', this.rootPath+"news");

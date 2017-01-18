@@ -65,7 +65,10 @@
   <iron-ajax url="{{rootPath}}api/get_recent_posts/?dev=1&count=0&post_type=uvalib_hierarchypost" auto last-response="{{news}}"></iron-ajax>
   <iron-ajax url="{{rootPath}}api/get_recent_posts/?dev=1&count=0&post_type=uvalib_guesshoo" auto last-response="{{trivia}}"></iron-ajax>
 
-  <uvalib-alt-page root-path="{{rootPath}}" title="Staff News" sub-title="UVA Library Staff News &mdash; Fall 2016"
+  <uvalib-alt-page root-path="{{rootPath}}"
+                  title="Staff News"
+                  sub-title="UVA Library Staff News &mdash; Fall 2016"
+                  analytics-site-id="26"
                   image="https://staffnews.staffweb.lib.virginia.edu/wp-content/uploads/sites/3/2016/11/header_image_rotunda.jpg">
 
     <div id="news" hidden$="{{!_newsActive}}">

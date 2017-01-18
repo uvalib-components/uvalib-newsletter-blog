@@ -68,7 +68,7 @@
   <uvalib-alt-page root-path="{{rootPath}}"
                   title="Staff News"
                   sub-title="UVA Library Staff News &mdash; Fall 2016"
-                  analytics-site-id="26"
+                  analytics-site-id="{{analyticsId}}"
                   image="https://staffnews.staffweb.lib.virginia.edu/wp-content/uploads/sites/3/2016/11/header_image_rotunda.jpg">
 
     <div id="news" hidden$="{{!_newsActive}}">
@@ -129,6 +129,7 @@ Polymer({
       type: Boolean,
       observer: '_init'
     },
+    analyticsId: String,
     randomTrivia: {
       type: Object,
     },

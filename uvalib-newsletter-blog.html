@@ -358,7 +358,7 @@
   <section>
     <a href="/" style="display: block"><paper-button>Home</paper-button></a>
     <!--<a href="">Archive</a>-->
-    <a href="/subscribe" style="display: block"><paper-button>Subscribe</paper-button></a>
+    <a href="/subscribe" style="display: block" hidden$="[[noSubscription]]"><paper-button>Subscribe</paper-button></a>
   </section>
 </app-drawer>
 
@@ -373,8 +373,8 @@
 <app-toolbar></app-toolbar>
 <app-toolbar>
 <div title spacer>
-  <div main>FACULTY NEWS</div>
-  <div sub>UVA Library Faculty News&mdash;{{_issue.title}}</div>
+  <div main>[[mainTitle]]</div>
+  <div sub>[[title]] &mdash;[[_issue.title]]</div>
 </div>
 </app-toolbar>
 <app-toolbar></app-toolbar>
@@ -382,9 +382,9 @@
 <template is="dom-if" if="[[smallScreen]]">
   <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
 </template>
-<div condensed-title><a href="/news/{{_issue.slug}}">Faculty News&mdash;{{_issue.title}}</a></div>
+<div condensed-title><a href="/news/[[_issue.slug]]">[[mainTitle]] &mdash;[[_issue.title]]</a></div>
 <template is="dom-if" if="[[!smallScreen]]">
-  <a href="/news/{{_issue.slug}}">Home</a>
+  <a href="/news/[[_issue.slug]]">Home</a>
   <paper-menu-button>
     <paper-button class="dropdown-trigger">
       <span>Archive</span>
@@ -528,6 +528,10 @@ var jQuery={noConflict:function(){}};
 Polymer({
   is: 'uvalib-newsletter-blog',
   properties: {
+    noSubscription: {
+      type: Boolean,
+      value: false,
+    },
     links: {
       type:Object,
       value:{}

@@ -3,49 +3,10 @@
   "description": "Library Newsletter Blog element that takes data from wordpress and creates a single page app",
   "main": "uvalib-newsletter-blog.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.7.0",
-    "app-layout": "PolymerElements/app-layout#^0.10.6",
-    "iron-icons": "PolymerElements/iron-icons#^1.2.0",
-    "iron-media-query": "PolymerElements/iron-media-query#^1.0.8",
-    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.3.1",
-    "iron-pages": "PolymerElements/iron-pages#^1.0.8",
-    "paper-icon-button": "PolymerElements/paper-icon-button#^1.1.3",
-    "paper-button": "PolymerElements/paper-button#^1.0.14",
-    "paper-menu": "PolymerElements/paper-menu#^1.2.2",
-    "juicy-html": "^1.1.0",
-    "uvalib-helper-libs": "uvalib-components/uvalib-helper-libs#master",
-    "app-route": "PolymerElements/app-route#^0.9.3",
-    "uva-footer": "uva-components/uva-footer#master",
-    "paper-card": "PolymerElements/paper-card#^1.1.4",
-    "uvalib-social-links": "uvalib-components/uvalib-social-links#master",
-    "uvalib-analytics": "uvalib-components/uvalib-analytics#master",
-    "uvalib-theme": "uvalib-components/uvalib-theme#master",
-    "paper-item": "PolymerElements/paper-item#^1.2.1",
-    "paper-menu-button": "PolymerElements/paper-menu-button#^1.5.2",
-    "uvalib-card": "uvalib-components/uvalib-card#master",
-    "uvalib-logos": "uvalib-components/uvalib-logos#master",
-    "uvalib-button": "uvalib-components/uvalib-button#master",
-    "uva-brand-style": "uva-components/uva-brand-style#master",
-    "uvalib-page": "uvalib-components/uvalib-page#master",
-    "iron-ajax": "PolymerElements/iron-ajax#^1.4.3"
-  },
-  "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
-    "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
-    "iron-ajax": "^1.2.0"
+    "uvalib-elements": "uvalib-components/uvalib-elements#master"
   },
   "resolutions": {
-    "polymer": "^1.7.0",
-    "lodash": "^4.15.0",
-    "iron-icons": "^1.2.0",
-    "uvalib-helper-libs": "master",
-    "uvalib-social-links": "master",
-    "iron-demo-helpers": "^1.2.5",
-    "uvalib-analytics": "master",
-    "uvalib-theme": "master",
-    "uva-brand-style": "master",
-    "uvalib-button": "master"
+    "lodash": "^4.17.4",
+    "app-storage": "^0.10.0"
   }
 }

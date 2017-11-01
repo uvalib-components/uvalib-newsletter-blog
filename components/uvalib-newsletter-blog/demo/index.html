@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head><script src="http://static.lib.virginia.edu/js/controllers/webcomponents.js"></script>
+    <title>uvalib-newsletter-blog demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../iron-ajax/iron-ajax.html">
+
+    <link rel="import" href="../uvalib-newsletter-blog.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </head>
+  <body>
+
+    <div class="vertical-section-container centered">
+      <h3>Basic uvalib-newsletter-blog Demo</h3>
+      <demo-snippet>
+        <template is="dom-bind" id="app">
+          <iron-ajax url="test.json" auto last-response="{{articles}}"></iron-ajax>
+          <uvalib-newsletter-blog articles="[[articles]]"></uvalib-newsletter-blog>
+        </template>
+      </demo-snippet>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <title>UVa Library Faculty News</title>
+
+    <script>
+      Polymer = {dom: 'shadow'};
+
+      (function() {
+        if ('registerElement' in document
+            && 'import' in document.createElement('link')
+            && 'content' in document.createElement('template')) {
+          // platform is good!
+        } else {
+          document.write( '<script src="//static.lib.virginia.edu/bower_components/webcomponentsjs/webcomponents-lite.min.js">\x3C/script>')
+        }
+      })();
+    </script>
+
+    <link rel="import" href="../../../iron-ajax/iron-ajax.html">
+    <link rel="import" href="../../uvalib-faculty-newsletter.html">
+
+    <style>
+      body { margin: 0; }
+      uvalib-staff-newsletter {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+
+  </head>
+  <body unresolved>
+
+    <template is="dom-bind" id="app">
+      <iron-ajax url="posts.json" auto last-response="{{articles}}"></iron-ajax>
+      <iron-ajax url="links.json" auto last-response="{{links}}"></iron-ajax>
+
+      <uvalib-faculty-newsletter path="/components/uvalib-newsletter-blog/demo/staff/"
+        news="{{articles}}" links="{{links}}"></uvalib-faculty-newsletter>
+    </template>
+
+  </body>
+</html>

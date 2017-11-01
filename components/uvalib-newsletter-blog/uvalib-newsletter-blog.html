@@ -1,0 +1,689 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="../app-route/app-location.html">
+<link rel="import" href="../app-route/app-route.html">
+<link rel="import" href="../app-route/app-route-converter.html">
+
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-media-query/iron-media-query.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../iron-pages/iron-pages.html">
+
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-menu/paper-menu.html">
+<link rel="import" href="../paper-card/paper-card.html">
+
+<link rel="import" href="../paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../paper-item/paper-item.html">
+
+<link rel="import" href="../app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../app-layout/app-header/app-header.html">
+<link rel="import" href="../app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../app-layout/app-scroll-effects/effects/resize-snapped-title.html">
+<link rel="import" href="../app-layout/app-toolbar/app-toolbar.html">
+
+<link rel="import" href="../uvalib-helper-libs/typekit.html">
+
+<link rel="import" href="../uvalib-helper-libs/lodash.html">
+
+<link rel="import" href="../uvalib-footer/uvalib-footer.html">
+<link rel="import" href="../juicy-html/juicy-html.html">
+<link rel="import" href="../uvalib-social-links/uvalib-social-links.html">
+<link rel="import" href="../uvalib-analytics/uvalib-analytics.html">
+
+<dom-module id="html-echo">
+  <template>
+  <style is="custom-style">
+    :host {
+      display: block;
+    }
+
+    /* =WordPress Core
+  -------------------------------------------------------------- */
+  .alignnone {
+      margin: 5px 20px 20px 0;
+  }
+
+  .aligncenter,
+  div.aligncenter {
+      display: block;
+      margin: 5px auto 5px auto;
+  }
+
+  .alignright {
+      float:right;
+      margin: 5px 0 20px 20px;
+  }
+
+  .alignleft {
+      float: left;
+      margin: 5px 20px 20px 0;
+  }
+
+  a img.alignright {
+      float: right;
+      margin: 5px 0 20px 20px;
+  }
+
+  a img.alignnone {
+      margin: 5px 20px 20px 0;
+  }
+
+  a img.alignleft {
+      float: left;
+      margin: 5px 20px 20px 0;
+  }
+
+  a img.aligncenter {
+      display: block;
+      margin-left: auto;
+      margin-right: auto
+  }
+
+  .wp-caption {
+      background: #fff;
+      border: 1px solid #f0f0f0;
+      max-width: 96%; /* Image does not overflow the content area */
+      padding: 5px 3px 10px;
+      text-align: center;
+  }
+
+  .wp-caption.alignnone {
+      margin: 5px 20px 20px 0;
+  }
+
+  .wp-caption.alignleft {
+      margin: 5px 20px 20px 0;
+  }
+
+  .wp-caption.alignright {
+      margin: 5px 0 20px 20px;
+  }
+
+  .wp-caption img {
+      border: 0 none;
+      height: auto;
+      margin: 0;
+      max-width: 98.5%;
+      padding: 0;
+      width: auto;
+  }
+
+  .wp-caption p.wp-caption-text {
+      font-size: 13px;
+      line-height: 17px;
+      margin: 0;
+      padding: 0 4px 5px;
+  }
+
+  /* Text meant only for screen readers. */
+  .screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+
+  .screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+  }
+
+  #ok:first-letter {
+    float: left;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-family: font-family: "prenton", "Helvetica Neue", Arial, sans-serif;
+  }
+  </style>
+  <div id="ok"></div>
+  </template>
+</dom-module>
+<script>
+  (function () {
+    Polymer({
+      is: 'html-echo',
+      properties: {
+        html: {
+          type: String,
+          observer: '_htmlChanged'
+        }
+      },
+      _htmlChanged: function (neo) {
+        // WARNING: potential XSS vulnerability if `html` comes from an untrusted source
+        Polymer.dom(this.$.ok).innerHTML = neo;
+//        this.innerHTML = neo;
+        this.updateStyles();
+      }
+    });
+  })();
+</script>
+
+<dom-module id="uvalib-newsletter-blog">
+
+<template>
+  <style include="iron-flex iron-flex-alignment"></style>
+  <style>
+
+  :host {
+    --app-primary-color: #002359;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+
+  app-drawer section {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  app-drawer h2 {
+    margin: 8px 0 0;
+    padding: 18px;
+    font-size: 18px;
+  }
+
+  app-header {
+    color: #fff;
+    background-color: #002359;
+  }
+
+  app-toolbar, h2, div[title] {
+    font-family: "prenton", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  #article-menu h2 {
+    margin: 0;
+    color: #E57200;
+    font-size: 1.6em;
+    margin-bottom: .5em;
+  }
+
+  #article-menu a:link, #article-menu a:visited, #article-menu a:hover, #article-menu a:active {
+    color: #E57200
+  }
+
+  #article-menu .select-item {
+    padding: 15px;
+  }
+
+  #article-menu .iron-selected {
+    font-weight: inherit;
+    background-color: #E57200;
+    color: #ffffff;
+  }
+
+  #article-menu .iron-selected h2 {
+    color: #ffffff;
+  }
+
+  app-toolbar[bottom] {
+    background-color: #002359;
+  }
+
+  app-toolbar a:link, app-toolbar a:visited, app-toolbar a:hover, app-toolbar a:active {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  app-toolbar a {
+    margin: 15px;
+  }
+
+  #footer {
+    background-color: #002359;
+  }
+
+  div[title] {
+    font-family: "franklin-gothic-urw",sans-serif;
+    font-weight: 400;
+    font-size: 4em;
+  }
+
+  div[title] div[sub] {
+    font-size: .4em;
+    font-weight: 200;
+  }
+
+  #article-menu {
+    float:right;
+    width: 300px;
+    margin: 20px;
+  }
+
+  #article {
+    font-family: "ff-dagny-web-pro", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.3em;
+    margin: 20px;
+  }
+
+  #content {
+    max-width: 970px;
+  }
+
+  #main {
+    line-height:2;
+  }
+
+  #main hr {
+    border-top: dotted 2px;
+    border-top-color: #002359;
+    width: 100%;
+  }
+
+  #extras paper-card {
+    margin: 20px;
+    width: 250px;
+    min-width: 200px;
+    height: 100%;
+    --paper-card-header-image: {
+      width: 100%;
+    }
+  }
+
+  #content {
+    margin-top: 2.5em;
+  }
+
+  paper-menu#article-menu {
+    padding: 0;
+  }
+
+  .card-header {
+    margin: 1em;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
+
+  paper-card.superlinks {
+    height: auto !important;
+    --paper-card-actions: {
+      font-weight: strong;
+      background-color: #E57200;
+      color: #ffffff;
+    };
+  }
+
+  .sociallink {
+    height:50px;
+    width:50px;
+    color: #ffffff;
+  }
+
+  #content.small-screen {
+    max-width: 425px;
+  }
+
+  paper-button {
+    text-transform: none;
+    font-weight: 500;
+  }
+
+  </style>
+
+  <app-location url-space-regex="^/(news|subscribe)" route="{{_route}}"></app-location>
+  <app-route-converter path="{{_path}}" route="{{_route}}"></app-route-converter>
+  <app-route route="{{_route}}" pattern="/news" tail="{{_subRoute}}"></app-route>
+  <app-route route="{{_subRoute}}" pattern="/:issue" data="{{issueData}}" tail="{{_subsubRoute}}"></app-route>
+  <app-route route="{{_subsubRoute}}" pattern="/:article" data="{{articleData}}"></app-route>
+
+  <iron-media-query query="max-width: 800px" query-matches="{{smallScreen}}"></iron-media-query>
+
+  <app-drawer-layout small-screen?="{{smallScreen}}" drawer-width="288px" force-narrow>
+
+  <app-drawer swipe-open>
+  <section>
+    <a href="/" style="display: block"><paper-button>Home</paper-button></a>
+    <!--<a href="">Archive</a>-->
+    <a href="/subscribe" style="display: block" hidden$="[[noSubscription]]"><paper-button>Subscribe</paper-button></a>
+  </section>
+</app-drawer>
+
+<app-header-layout>
+
+<app-header id="header" shadow condenses fixed effects="blend-background parallax-background resize-snapped-title">
+
+<app-toolbar></app-toolbar>
+<app-toolbar></app-toolbar>
+<app-toolbar></app-toolbar>
+<app-toolbar></app-toolbar>
+<app-toolbar></app-toolbar>
+<app-toolbar>
+<div title spacer>
+  <div main>[[mainTitle]]</div>
+  <div sub>[[title]] &mdash;[[_issue.title]]</div>
+</div>
+</app-toolbar>
+<app-toolbar></app-toolbar>
+<app-toolbar bottom>
+<template is="dom-if" if="[[smallScreen]]">
+  <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+</template>
+<div condensed-title><a href="/news/[[_issue.slug]]">[[mainTitle]] &mdash;[[_issue.title]]</a></div>
+<template is="dom-if" if="[[!smallScreen]]">
+  <a href="/news/[[_issue.slug]]">Home</a>
+  <paper-menu-button>
+    <paper-button class="dropdown-trigger">
+      <span>Archive</span>
+    </paper-button>
+    <paper-menu class="dropdown-content" attr-for-selected="slug" selected="{{issueData.issue}}">
+      <template is="dom-repeat" items="{{_issueSlugs}}">
+        <paper-item slug="{{item.slug}}">{{item.title}}</paper-item>
+      </template>
+    </paper-menu>
+  </paper-menu-button>
+
+              <a href="/subscribe">Subscribe</a>
+            </template>
+          </app-toolbar>
+
+        </app-header>
+
+        <div id="main" class="vertical layout">
+          <div class="horizontal center-justified layout">
+            <div id="content" class$="{{_issmallclass(smallScreen)}}">
+              <iron-pages id="pages" selected="{{_page}}" attr-for-selected="name">
+              <div id="news" name="news">
+                <paper-menu id="article-menu" attr-for-selected="id" selected="{{_selectedArticleSlug}}">
+                <template is="dom-repeat" items="{{_issue.childrenNodes}}">
+                  <div class="select-item" id="{{item.slug}}">
+                    <h2 inner-h-t-m-l="{{item.title}}"></h2>
+                    <div inner-h-t-m-l="{{item.excerpt}}"></div>
+                    <div class="more"><a href="{{item.slug}}">read more</a></div>
+                  </div>
+                </template>
+              </paper-menu>
+              <article id="article" class$="{{_type(_article)}}">
+
+                <template is="dom-if" if="{{_article}}">
+                  <h1 inner-h-t-m-l="{{_article.title}}"></h1>
+                </template>
+<!--                <div class="content" inner-h-t-m-l="{{_currentItem.content}}"></div> -->
+                <html-echo html="{{_currentItem.content}}"></html-echo>
+              </article>
+            </div>
+            <div name="archive">Archive!</div>
+            <div name="subscribe">
+
+              <!-- Begin MailChimp Signup Form -->
+              <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+              <style type="text/css">
+              #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+              /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+              </style>
+              <div id="mc_embed_signup">
+              <form action="//virginia.us13.list-manage.com/subscribe/post?u=794d3df539e4f0c7d8b6e2063&amp;id=503a7eaee6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                  <div id="mc_embed_signup_scroll">
+              <h2>Subscribe to our mailing list</h2>
+              <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+              <div class="mc-field-group">
+              <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+              </label>
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+              </div>
+              <div class="mc-field-group">
+              <label for="mce-FNAME">First Name </label>
+              <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+              </div>
+              <div class="mc-field-group">
+              <label for="mce-LNAME">Last Name </label>
+              <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+              </div>
+              <div class="mc-field-group input-group">
+                  <strong>Email Format </strong>
+                  <ul><li><input type="radio" value="html" name="EMAILTYPE" id="mce-EMAILTYPE-0"><label for="mce-EMAILTYPE-0">html</label></li>
+              <li><input type="radio" value="text" name="EMAILTYPE" id="mce-EMAILTYPE-1"><label for="mce-EMAILTYPE-1">text</label></li>
+              </ul>
+              </div>
+              <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_794d3df539e4f0c7d8b6e2063_503a7eaee6" tabindex="-1" value=""></div>
+                  <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                  </div>
+              </form>
+              </div>
+              <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+              <!--End mc_embed_signup-->
+
+          </div>
+        </iron-pages>
+      </div>
+    </div>
+    <hr />
+    <div id="extras" class="horizontal center-justified layout wrap">
+
+      <template is="dom-repeat" items="{{links.posts}}">
+        <paper-card class="superlinks" image="[[item.attachments.0.url]]" on-tap="_openlink">
+          <a style="display:none" class="card-link" href="[[item.custom_fields.link.0]]"></a>
+          <div class="card-header">[[item.title_plain]]</div>
+          <div class="card-content flex" inner-h-t-m-l="{{item.content}}"></div>
+          <div class="card-actions">
+            <paper-button>[[item.custom_fields.linkText.0]]</paper-button>
+          </div>
+        </paper-card>
+      </template>
+
+</div>
+<uvalib-footer custom>
+  <div two>
+    <ul>
+      <li><uvalib-instagram-link class="sociallink"></uvalib-instagram-link></li>
+      <li><uvalib-facebook-link class="sociallink"></uvalib-facebook-link></li>
+      <li><uvalib-twitter-link class="sociallink"></uvalib-twitter-link></li>
+    </ul>
+  </div>
+  <div three>
+    <ul>
+      <li><a href="http://news.library.virginia.edu/">Library News</a></li>
+      <li><a href="http://www.library.virginia.edu/services/faculty/">Faculty Services</a></li>
+      <li><a href="http://www.library.virginia.edu/askalibrarian/">Ask a Librarian</a></li>
+      <li><a href="http://guides.lib.virginia.edu/subjectlibrarians">Subject Liaisons</a></li>
+      <li><a href="http://www.library.virginia.edu/hours/">Library Hours</a></li>
+      <li><a href="http://search.lib.virginia.edu/account/review">My Account</a></li>
+    </ul>
+  </div>
+  <div two-ext>
+    <p>Have suggestions and ideas for future newsletters, or any other feedback? Email us at <a style="text-decoration:underline" href="mailto:libfacultynews@virginia.edu">libfacultynews@virginia.edu</a></p>
+  </div>
+</uvalib-footer>
+</div>
+
+</app-header-layout>
+
+</app-drawer-layout>
+
+<uvalib-analytics site-id="22" path="{{_path}}"></uvalib-analytics>
+
+</template>
+
+<script>
+var jQuery={noConflict:function(){}};
+
+Polymer({
+  is: 'uvalib-newsletter-blog',
+  properties: {
+    noSubscription: {
+      type: Boolean,
+      value: false,
+    },
+    links: {
+      type:Object,
+      value:{}
+    },
+    articles: {
+      type:Object,
+      value:{},
+      observer:"_articlesChanged"
+    },
+    _issueSlugs: {
+      type: Array,
+      value: []
+    },
+    _route: Object,
+    _path: {
+      type: Object,
+      observer:"_pathChanged"
+    },
+    _subRoute: Object,
+    _subsubRoute: Object,
+    issueData: {
+      type:Object,
+      value:{issue:""}
+    },
+    articleData: {
+      type:Object,
+      value:{article:""}
+    },
+    _article: Object,
+    _issue:{
+      type:Object,
+      observer:"_issueChanged"
+    },
+    _issueCategories:{
+      type:Array,
+    },
+    _currentItem: Object,
+    _selectedArticleSlug:{
+      type:String,
+      observer:"_articleSelected"
+    },
+    _page:{
+      type:String,
+      value:"news"
+    }
+  },
+
+  observers: ['_updateArticle(articles, issueData.issue, articleData.article)'],
+
+  _type: function(article) {
+    if(article) return "article";
+    else return "issue";
+  },
+
+  _issmallclass: function(small){
+    if (small) return "small-screen";
+  },
+
+  _openlink: function(e,a,b){
+    window.open(e.currentTarget.querySelector('.card-link').getAttribute('href'),"_blank");
+  },
+
+  _articlesChanged: function(){
+    this._issueSlugs = _.compact(_.map(this.articles.posts, function(post){ if(post.children.length>0) return {slug: post.slug, title: post.title}; }));
+  },
+
+  _pathChanged: function(){
+    if (_.startsWith(this._path, '/archive')) this._page = "archive";
+    else if (_.startsWith(this._path, '/subscribe')) {
+      this._page = "subscribe";
+      window.scroll(0,450);
+    }
+    else this._page = "news";
+  },
+
+  _articleSelected: function(){
+    if (this._selectedArticleSlug) {
+      this._path="/news/"+this._issue.slug+"/"+this._selectedArticleSlug;
+      window.scroll(0,450);
+    }
+  },
+
+  _issueChanged: function(){
+    this.set('_issue.childrenNodes', _.map(this._issue.children, function(childId){
+      return _.find(this.articles.posts, {id: childId});
+    }.bind(this) ));
+    var image = this._getImage(this._issue);
+    if (image && this.$.header && this.$.header.customStyle) {
+      this.$.header.customStyle['--app-header-background-front-layer'] = "background-image: url("+image+"); background-position: 50% 10%;";
+      this.$.header.updateStyles();
+    }
+    this._issueCategories;
+  },
+
+  _getImage: function(item){
+    if (item.attachments.length>0 && item.attachments[0].url){
+      return item.attachments[0].url;
+    } else {
+      return null;
+    }
+  },
+
+  _or: function(t1, t2){
+    return (t1 || t2);
+  },
+  _and: function(t1,t2){
+    return (t1 && t2);
+  },
+
+  _updateArticle: function(articles, issue, article){
+   this.debounce('update', function(){
+    if (this._subsubRoute && this._subsubRoute.path=="") {
+      article=this._article=null;
+      this.$["article-menu"].select(null);
+    }
+    var posts = _.orderBy(articles.posts, ['date'], ['desc']);
+    if (posts.length > 0 && !_.startsWith(this._path, '/subscribe')) {
+      if (!issue && !article) {
+        // get the latest post that has children
+        this._issue = _.find(posts, function(o){
+          return o.children.length>0;
+        });
+        this._path="/news/"+this._issue.slug;
+
+        // or
+        // get the latest post
+        if (!this._issue)
+          this._issue = posts[0];
+        this._path="/news/"+this._issue.slug;
+
+      } else if (issue && !article) {
+        // get the issue being asked for
+        this._currentItem = this._issue = _.find(posts, {slug: issue});
+        // or
+        // remove issue from url if not available
+        if (!this._issue)
+          this._path = "/";
+      } else if (issue && article) {
+        // get the issue and article being asked for
+        this._issue = _.find(posts, {slug: issue});
+        this._currentItem = this._article = _.find(posts, {slug: article});
+        // or
+        // remove article from url if not available
+        if (!this._issue)
+          this._path = "/";
+        else if (!this._article)
+          this._path = "/"+this._issue.slug;
+      }
+    }
+  }, 100);
+}
+});
+</script>
+
+</dom-module>

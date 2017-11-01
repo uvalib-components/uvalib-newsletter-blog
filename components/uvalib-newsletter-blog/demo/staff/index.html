@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <title>UVa Library Staff News</title>
+
+    <script>
+      //Polymer = {dom: 'shadow'};
+
+      (function() {
+        if ('registerElement' in document
+            && 'import' in document.createElement('link')
+            && 'content' in document.createElement('template')) {
+          // platform is good!
+        } else {
+          document.write( '<script src="//static.lib.virginia.edu/bower_components/webcomponentsjs/webcomponents-lite.min.js">\x3C/script>')
+        }
+      })();
+    </script>
+
+    <link rel="import" href="../../../iron-ajax/iron-ajax.html">
+    <link rel="import" href="../../uvalib-staff-newsletter.html">
+
+    <style>
+      body { margin: 0; }
+      uvalib-staff-newsletter {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+
+  </head>
+  <body unresolved>
+
+    <template is="dom-bind" id="app">
+      <uvalib-staff-newsletter root-path="/components/uvalib-newsletter-blog/demo/staff/"
+        news="{{articles}}" trivia="{{hoo}}"></uvalib-staff-newsletter>
+    </template>
+
+  </body>
+</html>

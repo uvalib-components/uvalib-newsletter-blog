@@ -1,0 +1,310 @@
+{
+  "status": "ok",
+  "count": 5,
+  "count_total": 5,
+  "pages": 1,
+  "posts": [
+    {
+      "id": 13,
+      "type": "uvalib_hierarchypost",
+      "slug": "fall-issue",
+      "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/news\/fall-issue\/",
+      "status": "publish",
+      "title": "Fall Issue",
+      "title_plain": "Fall Issue",
+      "content": "<p>Dear Colleagues,<\/p>\n<p>Welcome to the Library staff newsletter about talented people doing amazing things! The irony is that the employees featured in this inaugural edition are ordinary people passionate about things they would be doing even if they didn\u2019t work in a library. Their example is a reminder that the newsletter is not only for celebrating accomplishments at work, but for letting co-workers know what energizes you away from the Library.<\/p>\n<p>The new dean of libraries, John Unsworth, has contributed a call to action for the staff to do what he feels is necessary to make the Library successful. It\u2019s based in part on the conversations he\u2019s had with us\u2014conversations that dealt with our everyday lives as well as our work. So if you\u2019re reluctant to submit something, worried that your interests aren\u2019t important enough, or that others will not love the things you love, think again. Each year\u2019s Winter Carnival proves that there\u2019s an audience for every kind of interest. You might even find that your special interest has a use in the Library.<\/p>\n<p>Putting the newsletter together has been a completely new experience for me, a learning experience that hopefully will make reading it a worthwhile experience for all of you. One important thing I\u2019ve learned is that people who submit material are understandably concerned about having their words altered in the editing process. If you\u2019d like your submission to go in as is, or if you\u2019d like to give us information to write something for you, or if you\u2019d prefer sitting down for an interview, we\u2019re happy to accommodate. Edits to your content will be made in consultation with you, and the article submitted to you for approval.<\/p>\n<p>It\u2019s never too early to submit something for the newsletter, so let us hear from you soon!<\/p>\n<p>Mitch Farish<br \/>\nContent Editor<\/p>\n",
+      "excerpt": "<p>Dear Colleagues, Welcome to the Library staff newsletter about talented people doing amazing things! The irony is that the employees featured in this inaugural edition are ordinary people passionate about things they would be doing even if they didn\u2019t work in a library. Their example is a reminder that the newsletter is not only for [&hellip;]<\/p>\n",
+      "date": "2016-11-14 15:28:06",
+      "modified": "2016-11-14 20:51:19",
+      "categories": [],
+      "tags": [],
+      "author": {
+        "id": 34,
+        "slug": "dhc4z",
+        "name": "dhc4z",
+        "first_name": "",
+        "last_name": "",
+        "nickname": "dhc4z",
+        "url": "",
+        "description": ""
+      },
+      "comments": [],
+      "attachments": [
+        {
+          "id": 28,
+          "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/header_image_rotunda.png",
+          "slug": "header_image_rotunda",
+          "title": "header_image_rotunda",
+          "description": "",
+          "caption": "",
+          "parent": 13,
+          "mime_type": "image\/png",
+          "images": {
+            "full": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/header_image_rotunda.png",
+              "width": 3000,
+              "height": 2000
+            },
+            "thumbnail": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/header_image_rotunda-150x150.png",
+              "width": 150,
+              "height": 150
+            },
+            "medium": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/header_image_rotunda-300x200.png",
+              "width": 300,
+              "height": 200
+            },
+            "medium_large": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/header_image_rotunda-768x512.png",
+              "width": 768,
+              "height": 512
+            },
+            "large": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/header_image_rotunda-1024x683.png",
+              "width": 1024,
+              "height": 683
+            }
+          }
+        }
+      ],
+      "comment_count": 0,
+      "comment_status": "closed",
+      "thumbnail": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/header_image_rotunda-150x150.png",
+      "custom_fields": {},
+      "thumbnail_size": "thumbnail",
+      "thumbnail_images": {
+        "full": {
+          "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/header_image_rotunda.png",
+          "width": 3000,
+          "height": 2000
+        },
+        "thumbnail": {
+          "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/header_image_rotunda-150x150.png",
+          "width": 150,
+          "height": 150
+        },
+        "medium": {
+          "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/header_image_rotunda-300x200.png",
+          "width": 300,
+          "height": 200
+        },
+        "medium_large": {
+          "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/header_image_rotunda-768x512.png",
+          "width": 768,
+          "height": 512
+        },
+        "large": {
+          "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/header_image_rotunda-1024x683.png",
+          "width": 1024,
+          "height": 683
+        }
+      },
+      "children": [
+        11,
+        9,
+        7,
+        5
+      ]
+    },
+    {
+      "id": 11,
+      "type": "uvalib_hierarchypost",
+      "slug": "passion-for-playwriting-leads-sean-mccord-to-his-lifetime-calling",
+      "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/news\/fall-issue\/passion-for-playwriting-leads-sean-mccord-to-his-lifetime-calling\/",
+      "status": "publish",
+      "title": "Passion for Playwriting Leads Sean McCord to His \u201cLifetime Calling\u201d",
+      "title_plain": "Passion for Playwriting Leads Sean McCord to His \u201cLifetime Calling\u201d",
+      "content": "<p>In a year when a First Folio of Shakespeare\u2019s plays put the dramatic arts on center stage in the main gallery of the Harrison\/Small building, it\u2019s worth noting that the Library has its own playwright. Twenty-five years ago AV &amp;amp; IT Systems Engineer Sean McCord and his new bride arrived from New York, bought a house, raised a family, and, when the demands of life allowed, Sean worked at completing a Master\u2019s degree. When his 12-year- old son, Arthur, auditioned for the musical 13 at Live Arts and landed a singing part, Sean attended almost every performance. The experience made him \u201crediscover\u201d how much he enjoyed theater, evoking memories of when, at East San Francisco Bay community college, he had built props and worked the effects for a production of Hair. In Charlottesville, Sean joined the Live Arts writers group, the Playwrights\u2019 Lab<\/p>\n<p>In 2011 Sean wrote his first play, Names Like Rain, which was selected for the Lab\u2019s annual show of summer shorts. According to Sean, the play was \u201ca highly personal monologue about a memory of my father\u201d who, when Sean was seven, \u201cmade a brilliant speech against the Vietnam War in which he only read the names of those recently fallen.\u201d Sean says his \u201cstraight-laced father, former military and young Republican \u2026 approved of my play.\u201d The experience of working with a director and actor, \u201cseeing my words come to life,\u201d was what hooked him. Sean wrote several more short plays, all of which were performed at Live Arts and other local venues.<\/p>\n<p>After learning that a friend in the Playwrights\u2019 Lab spent summers at Roanoke\u2019s Hollins College pursuing a Fine Arts degree, Sean took steps to follow his \u201clifetime calling.\u201d He worked things out with his family, arranged to have his work responsibilities covered by Zeke Crater\u2019s A\/V team, got approval from his manager, Hoke Perkins, and then used his $1,000 education benefit to enroll at Hollins. This past summer was Sean\u2019s second of cramming a semester\u2019s work into six intense weeks. In three more summers\u2014if everything goes well\u2014he can start working on his thesis.<\/p>\n<p>In the meantime, Sean has written plays and seen them performed at festivals across the country. In September he had a play in the 24-hour international festival of 10-minute plays The Red Eye 10s. Sean\u2019s play honoring his uncle who served in WWII was written overnight and on the same day his uncle died. \u201cI was given a theme (\u201cex-pat in Paris\u201d) and, knowing that he served in WWII, imagined a scene where he meets a beautiful woman in Paris before shipping back home to the states. It came out very well for something that I wrote in just a few hours.\u201d<\/p>\n<p>On October 28\u201329, a play by Sean was performed in The Twilight Gallery, a Halloween show in Roanoke, produced by the Page to Stage Theater Company that was started by some friends from Hollins. Sean\u2019s play is \u201cabout a writer struggling to write a strong woman character who may have succeeded too much when the woman steps out of his script and takes over his creative process.\u201d Sean is also talking with fellow writers in Charlottesville about the possibility of starting an independent theater here.<\/p>\n",
+      "excerpt": "<p>Audiovisual &amp; IT Systems Engineer Sean McCord uses the Library\u2019s educational benefit as a means of enrolling in summer classes at Hollins College to pursue his \u201clifetime calling\u201d as a playwright.<\/p>\n",
+      "date": "2016-11-14 15:25:05",
+      "modified": "2016-11-14 18:42:26",
+      "categories": [],
+      "tags": [],
+      "author": {
+        "id": 34,
+        "slug": "dhc4z",
+        "name": "dhc4z",
+        "first_name": "",
+        "last_name": "",
+        "nickname": "dhc4z",
+        "url": "",
+        "description": ""
+      },
+      "comments": [],
+      "attachments": [],
+      "comment_count": 0,
+      "comment_status": "closed",
+      "custom_fields": {},
+      "children": []
+    },
+    {
+      "id": 9,
+      "type": "uvalib_hierarchypost",
+      "slug": "librarian-and-family-historian-regina-rush-tells-story-of-ordinary-people",
+      "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/news\/fall-issue\/librarian-and-family-historian-regina-rush-tells-story-of-ordinary-people\/",
+      "status": "publish",
+      "title": "Librarian and Family Historian Regina Rush Tells Story of \u201cOrdinary People\u201d",
+      "title_plain": "Librarian and Family Historian Regina Rush Tells Story of \u201cOrdinary People\u201d",
+      "content": "<p>Nearly two centuries have passed since enslaved laborers cleared ground, made bricks, and started building Jefferson\u2019s Academical Village, and the University is now beginning to give substance to those once-invisible hands that also reaped grain and harvested the tobacco of the region. Some of the hands that labored on Albemarle landowner Robert Rives, Sr.\u2019s South Warren Plantation were those of husband and wife Isham Rush and Nicey Ann Coles. When Rives died in 1845, Isham Rush was appraised at $550; Nicey and two children, Betsy and Sam, at $675. We know these facts because, in the late 1990s, Isham and Nicey\u2019s great-great granddaughter Regina Rush, Reference Librarian in the Albert and Shirley Small Special Collections Library, embarked on a fifteen-year quest for information about her ancestors in the primary documents she works with every day.<\/p>\n<p>In the following essay, Regina explains what motivated her to search for her ancestors and tell their story, and how her personal quest\u2014undertaken over a decade before the University\u2019s investigations into the lives of enslaved laborers on Grounds\u2014has made her a Library resource for others wishing to explore their ancestry, particularly African-Americans.<\/p>\n<p>\u201cOver more than fifteen years of digging into my family\u2019s ancestry, I have amassed quite a bit of raw data that screams out to be put in some sort of form that tells their story. Notes from Under Grounds proved to be the perfect launching pad \u2026\u201d<\/p>\n<p>When I wrote this over two years ago, little did I know one year later I would be catapulted from the safety and anonymity of sitting at my desk in Special Collections writing a blog, to standing before an audience of hundreds speaking on my ancestors\u2019 journey from slavery to landownership in Central Virginia.<\/p>\n<p>My research has unearthed such events as my great-great- grandmother Nicey\u2019s unsuccessful attempt to escape to freedom in 1851 and my great-grandmother Ella\u2019s success saving enough money working as a midwife and laundress to purchase five acres of land in 1896.<\/p>\n<p>Pre-blog and presentation Regina, who broke out in a cold sweat at the mere thought of public speaking, could not have envisioned that a quest to learn about her ancestors would eventually land her front and center before an audience giving voice to her forebears whose voices were silenced. It was one of the most terrifyingly liberating experiences of my life. As I shook off the butterflies and let the ancestors speak through me, I realized that while I was giving them a voice, they were helping me find my voice and discover my passion for African-American genealogy and historical research.<\/p>\n<p>While I enjoy all aspects of my job as a reference librarian, assisting researchers embarking on their own genealogical quest is my true passion, particularly African-Americans seeking information concerning their forbears. The late fiction writer Sam Greenlee, author of The Spook Who Sat by the Door, remarked in an interview with the digital archive History Makers, \u201cBlack history is not \u2026 just dealing with prominent blacks \u2026 What were we doing as a people? \u2026 What happened after so called Emancipation \u2026 suddenly we were a people without capital, without land, without resource \u2026 these people were heroes. But we don\u2019t hear about \u2018em. What about ordinary people, who-like my great- grandfather worked the land in Louisiana? A landowner in Louisiana at the turn of the century? That\u2019s phenomenal. But we don\u2019t hear about them.\u201d<\/p>\n<p>I\u2019ve made it my mission to unearth and tell the stories of the \u201cordinary people,\u201d such as Grandma Ella, and Sam Greenlee\u2019s grandfather. These are the stories that make up the fabric of African-American history.<\/p>\n<p>As for the butterflies: I\u2019m sure they\u2019ll return as I prepare for my upcoming presentation before the Shadwell Chapter of the Daughters of the American Revolution in March. No doubt my heart will race and my voice will become a bit shaky as I begin to tell their story. However, as the late Audrey Lorde, Carribean-American writer, poet and activist, said: \u201cWhen I dare to be powerful-to use my strength in the service of my vision, then it becomes less and less important whether I am afraid.\u201d<\/p>\n",
+      "excerpt": "<p>Reference Librarian Regina Rush, working with primary documents in the Albert and Shirley Small Special Collections Library, researches her family\u2019s history and finds a voice to speak for her ancestors, and a passion for helping others explore their own ancestry.<\/p>\n",
+      "date": "2016-11-14 15:24:19",
+      "modified": "2016-11-14 18:24:05",
+      "categories": [],
+      "tags": [],
+      "author": {
+        "id": 34,
+        "slug": "dhc4z",
+        "name": "dhc4z",
+        "first_name": "",
+        "last_name": "",
+        "nickname": "dhc4z",
+        "url": "",
+        "description": ""
+      },
+      "comments": [],
+      "attachments": [],
+      "comment_count": 0,
+      "comment_status": "closed",
+      "custom_fields": {},
+      "children": []
+    },
+    {
+      "id": 7,
+      "type": "uvalib_hierarchypost",
+      "slug": "library-3d-historian-will-rourk-preserves-uvas-architectural-legacy",
+      "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/news\/fall-issue\/library-3d-historian-will-rourk-preserves-uvas-architectural-legacy\/",
+      "status": "publish",
+      "title": "Library 3D Historian Will Rourk Preserves UVA\u2019s Architectural Legacy",
+      "title_plain": "Library 3D Historian Will Rourk Preserves UVA\u2019s Architectural Legacy",
+      "content": "<p>If a natural or man-made disaster were to suddenly flatten the Rotunda, and UVA were forced to rebuild its most enduring symbol, Cultural Heritage Data Specialist Will Rourk of the Robertson Media Center would likely be among the people the Office of the Architect turns to. Will has long been scanning, collecting, and safeguarding measured data on the architectural treasures of Jefferson\u2019s University\u2014pursuing a passion for practical architecture that he demonstrated since his teen years in the building trades, installing drywall and doing general carpentry. At Virginia Tech he was enticed to study Architecture by a meandering trail of Legos\u2014part of a competition that he says made his decision for him. His first experience with three-dimensional design came the old-fashioned way\u2014first drafting with ink on Mylar, then building with chipboard, cardboard, and creosote among other materials.<\/p>\n<p>By the time digital media Strategist Jama Coartney urged Will to make the Library\u2019s first largescale investment in 3D technology, he had written articles\u2014\u201cScan your Horizons\u201d and \u201cYou Scan\u201d\u2014about scanners that could capture 3D images by flashing lasers against surfaces. Irish ancestry and interest in Celtic music\u2014playing tenor banjo, mandolin, and tin whistle with his son and in his band King Golden Banshee\u2014drew Will naturally toward Irish tower houses, castles, and monasteries; but a sixteen-year relationship with the Tibetan and Himalayan Library led to a passion for traditional Tibetan architecture. His fourth trip to Tibet in August yielded an immense amount of data from monuments, carved stones, and shrines.<\/p>\n<p>It was Will\u2019s drive to preserve and make cultural heritage data available to scholars everywhere that led, in November of 2015, to UVA\u2019s partnership with CyArk, a non-profit organization whose mission to preserve and give free access to 3D data of World Heritage sites fit perfectly with the Library\u2019s. In his own research Will became aware of the preservation work of Ben Kacyra, the godfather of modern laser scanning who was shocked into founding CyArk by the Taliban\u2019s destruction of the giant Buddhas of Bamiyan. UVA became one of CyArk\u2019s 500 endangered sites to be digitally preserved as a firewall against the real possibility of disaster. In 1895 fire gutted the Rotunda, and in 2011 a 5.8 magnitude earthquake shook UVA, destroyed residences, and cracked the Washington Monument.<\/p>\n<p>In his capacity as liaison to CyArk, Will has been working with the Academic Preservation Trust and the Institute for Advanced Technology in the Humanities (IATH) to collect data\u2014often using quadcopters to get 3D data from points on 2D photos taken from the air\u2014and send it to CyArk, a far cry from the days when the Library needed to borrow a laser scanner from IATH. According to Will, the Library now possesses technologies even more advanced than many used in Architecture, Engineering, and Construction today.<\/p>\n<div id=\"attachment_25\" style=\"width: 1015px\" class=\"wp-caption alignnone\"><img class=\"wp-image-25 size-full\" src=\"https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda.png\" alt=\"View of unpainted copper Rotunda roof from above.\" width=\"1005\" height=\"539\" srcset=\"https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda.png 1005w, https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda-300x161.png 300w, https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda-768x412.png 768w\" sizes=\"(max-width: 1005px) 100vw, 1005px\" \/><p class=\"wp-caption-text\">The Rotunda dome unpainted, revealing the extraordinary metalwork of bare copper, usi ng aerial photogrammetry from quadcopters.<\/p><\/div>\n<p>Thanks to Will and CyArk, scholars may rest a little easier, knowing that hidden features of UVA\u2019s rich architectural legacy, like the reverse arches that undergird the Rotunda, will never truly be lost. Generations will now be able to see and study them, even after new construction has hidden them away, perhaps never to be exposed again.<\/p>\n<div id=\"attachment_26\" style=\"width: 1023px\" class=\"wp-caption alignnone\"><img class=\"wp-image-26 size-full\" src=\"https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda2.png\" alt=\"will-rotunda2\" width=\"1013\" height=\"561\" srcset=\"https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda2.png 1013w, https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda2-300x166.png 300w, https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda2-768x425.png 768w\" sizes=\"(max-width: 1013px) 100vw, 1013px\" \/><p class=\"wp-caption-text\">Nearly 16 feet below the floor of the Rotunda\u2019s East Oval Room, revealing the foundation arches that support the Rotunda drum. \u00a0The Rotunda drum wall is one of the few architectural features remaining of the original Jeffersonian structure.<\/p><\/div>\n",
+      "excerpt": "<p>Cultural Heritage Data Specialist Will Rourk keeps the Library in the forefront of digital preservation, ensuring that measured data on the University\u2019s architecture is available to scholars everywhere, and remains safe even if the structures should fall to natural or man-made disaster.<\/p>\n",
+      "date": "2016-11-14 15:23:36",
+      "modified": "2016-11-14 19:52:43",
+      "categories": [],
+      "tags": [],
+      "author": {
+        "id": 34,
+        "slug": "dhc4z",
+        "name": "dhc4z",
+        "first_name": "",
+        "last_name": "",
+        "nickname": "dhc4z",
+        "url": "",
+        "description": ""
+      },
+      "comments": [],
+      "attachments": [
+        {
+          "id": 25,
+          "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda.png",
+          "slug": "will-rotunda",
+          "title": "will-rotunda",
+          "description": "",
+          "caption": "The Rotunda dome unpainted, revealing the extraordinary metalwork of bare copper, usi ng aerial photogrammetry from quadcopters.",
+          "parent": 7,
+          "mime_type": "image\/png",
+          "images": {
+            "full": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda.png",
+              "width": 1005,
+              "height": 539
+            },
+            "thumbnail": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda-150x150.png",
+              "width": 150,
+              "height": 150
+            },
+            "medium": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda-300x161.png",
+              "width": 300,
+              "height": 161
+            },
+            "medium_large": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda-768x412.png",
+              "width": 768,
+              "height": 412
+            },
+            "large": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda.png",
+              "width": 1005,
+              "height": 539
+            }
+          }
+        },
+        {
+          "id": 26,
+          "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda2.png",
+          "slug": "will-rotunda2",
+          "title": "will-rotunda2",
+          "description": "",
+          "caption": "",
+          "parent": 7,
+          "mime_type": "image\/png",
+          "images": {
+            "full": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda2.png",
+              "width": 1013,
+              "height": 561
+            },
+            "thumbnail": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda2-150x150.png",
+              "width": 150,
+              "height": 150
+            },
+            "medium": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda2-300x166.png",
+              "width": 300,
+              "height": 166
+            },
+            "medium_large": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda2-768x425.png",
+              "width": 768,
+              "height": 425
+            },
+            "large": {
+              "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/wp-content\/uploads\/sites\/3\/2016\/11\/will-rotunda2.png",
+              "width": 1013,
+              "height": 561
+            }
+          }
+        }
+      ],
+      "comment_count": 0,
+      "comment_status": "closed",
+      "custom_fields": {},
+      "children": []
+    },
+    {
+      "id": 5,
+      "type": "uvalib_hierarchypost",
+      "slug": "a-message-to-staff-from-university-librarian-john-unsworth",
+      "url": "https:\/\/staffnews.staffweb.lib.virginia.edu\/news\/fall-issue\/a-message-to-staff-from-university-librarian-john-unsworth\/",
+      "status": "publish",
+      "title": "A Message to Staff from University Librarian John Unsworth",
+      "title_plain": "A Message to Staff from University Librarian John Unsworth",
+      "content": "<p>I\u2019m writing to you at the beginning of a new series of staff newsletters, a communication vehicle that I hope will help us to get to know one another better, both in our work roles and as people. Over the four months since I was hired, I\u2019ve had the opportunity to meet most of you in person, and talk for a bit: this has been very helpful to me, and I hope it has helped you to feel that you know me at least a bit. What I\u2019ve learned from these conversations will inform my decisions about our organizational structure and priorities going forward. These conversations have also made it clear that the Library has an exceptionally dedicated and mission-oriented staff: you care a great deal about the students and faculty who depend on us, and about the collections and services that we offer to them.<\/p>\n<p>It\u2019s time now for me to start putting all my information-gathering into action, so here are a dozen important things that I\u2019ll be asking you to work on with me in the coming months, in no particular order:<\/p>\n<p><strong>1) Strategic Planning:<\/strong><\/p>\n<p>We have $250,000 from the Strategic Investment Fund to do strategic planning for the Library. This is nicely timed in advance of next July, when we can begin to draw on state appropriations for Alderman Renewal planning. Any strategic plan will need to have an Alderman plan inside it. But Alderman aside, I want to use this funding to bring in library experts from other institutions who can give us an accurate assessment of our current state in key functional, staffing, and strategic areas. I see these reports as the necessary starting point if strategic plans are to be implemented successfully: we have to know where we are in order to accurately estimate the effort and cost required to reach a new goal\u2014and there\u2019s no point in advertising goals you will never reach. You\u2019ll all be involved in this planning process, but I\u2019ll do my best to keep the burden light, for any individual.<\/p>\n<p><strong>2) Campaign Planning:<\/strong><\/p>\n<p>With the rest of the University, we are entering into a capital campaign. This is an opportunity for us to articulate a vision of the Library\u2019s future, and to figure out how to fund that future. In that respect, campaign planning and strategic planning will be closely related, for the Library. My recent presentation to the Provost\u2019s Development Forum on the Library\u2019s goals for the campaign named a figure about four times our last campaign performance, and led with funding for renewing library facilities, services, and collections. The goals also included current-use funding for addressing affordability issues (endowment takes too long \u2026) and both endowment and current use for diversity pipeline and library professional development programs. Special Collections and Advancement will carry a lot of the implementation burden on this one, but ideas and program participation will be needed from one and all.<\/p>\n<p><strong>3) Alderman (and other) Renewal Planning:<\/strong><\/p>\n<p>The renovation of Alderman Library is the biggest item on our collective to-do list, in terms of the amount of effort that\u2019s already been expended on it, the cost of the project at completion, and the impact on all library users and staff. Many plans have already been made, at great expense: it\u2019s our duty not to waste that effort by ignoring its results: and yet, we need a current planning conversation that includes faculty and students, that starts very soon now, and that continues throughout the project, until we have a new library. Or two: Fiske-Kimball is also on the University\u2019s capital project list, and I have been talking with the deans of Arts &amp;amp; Sciences and Architecture about joint facilities that might replace or build on a renovated Fiske-Kimball.<\/p>\n<p><strong>4) Data Analytics:<\/strong><\/p>\n<p>First and foremost, the Library itself is going to need the best data it can gather for the purpose of reporting to deans of schools and colleges about how their faculty and students use the collections, spaces, and services that the Library provides. Data-informed conversations begin at home, but they shouldn\u2019t end there: the Data Science Institute is an important pan-University initiative, and it\u2019s one that should be easy for us to connect to, through expanded Research Data Services. I see opportunities for such expansion in the research project I bring with me, the HathiTrust Research Center, a virtual computational facility based in Indiana and Illinois that provides computational access to all of the material in the HathiTrust. That counts as Big Data, even in Science World. The project I\u2019m developing out of this is a partnership with publishers and aggregators to co-locate proprietary journal content with the HathiTrust monograph collection, as a proof of concept for a business case that should contribute to the sustainability of this important research infrastructure. I have start-up funds to devote to this, and I have begun identifying interested staff; let me know if you want to be on that list. This is also an opportunity to connect with Ron Hutchins\u2019 efforts to build consortia for regional high-performance computing and data storage, and in that context, perhaps to build consortial data services of our own, in VIVA, or ASERL, or elsewhere.<\/p>\n<p><strong>5) Inclusion Initiative:<\/strong><\/p>\n<p>This initiative will focus on building pipeline programs that bond the Library to the local community, and that increase the diversity of library staff, and the range of career opportunities for the citizens of Charlottesville. It will also help us gear up to meet the needs of a diversifying student population, and new faculty research interests. Virginia is no different from any other university I\u2019ve worked at, in that it has only recently begun to address issues of exclusion, discrimination, and hate that pervade American culture\u2014not unchanged, but not eradicated by the civil rights movement, the women\u2019s movement, LGBT movements, and the Black Lives Matter movement. The Library has a special role on college campuses, when it comes to creating and maintaining safe space for important and difficult conversations. We can all benefit from learning more about our community and ourselves.<\/p>\n<p><strong>6) Rebuilding Location-based Work Communities:<\/strong><\/p>\n<p>In the recent reorganization, the centralization of reporting along functional lines seems to have disrupted the functioning of local work communities, in library locations outside of Alderman. I\u2019ve begun naming location managers and local facilities contacts, in order to mitigate this. In service of this goal, I hereby declare that anyone who works in the library is at liberty to help anyone else who works in the Library on any Library project or process, in the interest of the greater good. If you are concerned about permission, then you should probably ask for it. If you are not concerned about that and it\u2019s been more than 15 hours, then you too should ask for permission.<\/p>\n<p><strong>7) Affordable and Accessible Teaching and Research:<\/strong><\/p>\n<p>Affordability has both a faculty and a student component, and I would really like to keep them linked in all of the Library\u2019s discussions and communications on these two threads. When we think about the student part as being about affordable textbooks, we make the solution the student\u2019s problem; if we think of it as an affordable teaching issue, we make it the instructor\u2019s problem. Among those problems: the exclusionary effect of costly STEM course materials. Affordable teaching includes the cost of textbooks, the gamble on open educational resources. Affordable research includes the impact in the humanities and social sciences of cost increases in science journal subscriptions. The Library needs to staff a university-wide discussion of these issues, over the next four years, so that we are ready to act wisely when we negotiate our next Elsevier and Springer contracts. Accessible education is an interest of mine with roots in an IMLS project, funded to pilot a national repository for course materials made accessible. Virginia will be a funded participant in the next round of this project, with planning at CNI in December. We have a number of staff deeply interested in tackling different parts of the accessible\/affordable research\/teaching effort, and we have faculty champions on deck, and in the wings.<\/p>\n<p><strong>8) Digital Humanities at UVA:<\/strong><\/p>\n<p>The University of Virginia has an international reputation as a font of digital humanities, especially that variety of the field that is linked to book history, textual criticism, bibliography, and philology. Lately, it has added investments in media studies, experimental pedagogy, graduate education, spatial analysis, semantic web, global humanities, and other areas. Incoming faculty and students at all levels show increasing interest in and need for support in digital work across the disciplines, with some of the greatest challenges still being in the humanities and the social sciences. UVA needs to organize its investments in this area, and it has begun to do that. I\u2019m happy to report good participation and collaboration across the board, from faculty to staff and their managers, to the people who direct the resources, as we work our way toward a more intentional design. That design is almost certain to include new educational programs, certificates, badges, or other credentials. Instructional librarians: It would not be too early to begin reviewing or organizing lib-guides, workshops, etc. in this area.<\/p>\n<p><strong>9) Collaborative and Consultative Collections Development:<\/strong><\/p>\n<p>We need more information, particularly from our faculty and graduate students, about how our collections meet their needs and expectations. I\u2019ve asked subject liaisons and collections staff to begin assembling that information in a systematic way: I\u2019ll be supporting that effort with communication to department chairs and faculty, and the University Library Committee. As we gather this information, we also need to work on developing our consortial resource-sharing arrangements, in VIVA, but also potentially in ReCAP, BorrowDirect (or others exhibiting obligatory camel case). In the not very long run, we need to be part of something like both EAST (https:\/\/blc.org\/east-project)and WEST (http:\/\/www.cdlib.org\/services\/west\/). As part of those consortia, we need to analyze our patterns of use, collectively (see \u201cData Analytics\u201d above), and discover where we might have opportunities to do collaborative collection development across institutions. All of this needs to be explained to faculty and administrators, in ways that make sense to them and respect their values and priorities.<\/p>\n<p><strong>10) Cleaning House, Processing Backlogs:<\/strong><\/p>\n<p>We have lots of locked stacks holding items needing processing, and lots of stuff in our collections that people can\u2019t get at, even to know that we have it. We need to address those deferred maintenance issues, and we have a special incentive to do so, in the upcoming Alderman renovation. We may also have opportunities to address various parts of this challenge in the bicentennial, the capital campaign, the Alderman renovation, or other project headings. And not only in Alderman: Clemons, Fine Arts, Music, and other locations all have their own reasons to clean house.<\/p>\n<p>Physical storage issues are minor, though, compared to the backlogs we need to address in processing various incoming collections (some of which have been incoming for a very long time). I am working with senior leadership to identify endowments that could support a short-term effort to catch up on cataloging in the main library (including significant non-book accessions), and manuscript processing in Special Collections. Inventory control is the next item on this list, and it\u2019s relevant here too: we need to record and make available what we have, so others can know that we have it, and can use it.<\/p>\n<p><strong>11) Inventory:<\/strong><\/p>\n<p>Barcoding first happened when I was a graduate student here. It was part of putting in the online catalogue system. At more or less the same time, air conditioning went in. For me, the online catalogue was more important (but I didn\u2019t work all day in the library). Barcoding didn\u2019t immediately happen for all items, of course: the most frequently circulated got stickered, and others were to be done when they were eventually checked out. About a third of what\u2019s in Alderman apparently hasn\u2019t been checked out since then, and there have been some significant hiccups around inventory at various points in the last 20 years, including significant noise in the system around the location of items. It\u2019s time to get on top of the \u201cwhere things are\u201d problem, and along the way, do our utmost to improve intellectual access in the records we provide as fodder for search engines\u2014ours and the world\u2019s. The more of our collection is in non-browsable storage, the more important it is that we give all users the best possible information to decide whether a particular item is worth requesting. Remote storage allows us to keep more print, in better environmental conditions, with lower requirements for use, and for longer periods of time\u2014but checking something in or out of that storage is very expensive, compared to what we do in browsable stacks situations, so we want to make sure fulfilling a request is likely to be useful to research or teaching. And we really don\u2019t want to lose track of things in long-term storage, where, as Jefferson actually said, \u201ca book misplaced is in fact lost, as nothing but accident or a revision of the whole library book by book can ever find it again.\u201d (http:\/\/founders.archives.gov\/documents\/Jefferson\/98-01- 02-5229)<\/p>\n<p><strong>12) Planning Continuity of Service During the Alderman Renovation:<\/strong><\/p>\n<p>Other universities have kept their main library open while it was being renovated: we need to visit, interview, and learn from some recent examples. We also need to begin a detailed exercise to project traffic, processing costs, and service levels in a (let\u2019s say five-year) period when most delivery of physical collections is by delivery to Clemons or via LEO. What will stacks management look like, not only with the renovation, but with the likely consolidation of science collections in Brown, and other predictable changes in the Library\u2019s footprint on grounds? The staff who deliver the services on which patrons depend, day to day, need to be central in the development of our plans, here as everywhere.<\/p>\n<p>There are lots of other things we need to do, internally and externally, but these are some of the things that are clearly on our horizon, or already upon us. I know that my expression of these things will not please, entirely, those who work in the areas to which I refer. I also know that with respect to any given item, there will be those who feel their contribution to that topic was overlooked by not being named. I encourage all those just described to identify themselves to me, as people willing to work on moving these things forward. And finally, I know that many important things in the Library\u2019s future are not on the list above: please continue to pursue those things, and bring them into conversation with library leadership, through the staff council, or the library fellows program, or by referring ideas to the Library\u2019s Senior Leadership Team (SLT). Or to me: Unsworth@virginia.edu or john.m.unsworth@gmail.com if you want to reach me by email outside of the University. Or 217-390- 2043 if you want to call. Or (best of all) get in touch with my able assistant Chanel Newby can3m@eservices.virginia.edu, and we\u2019ll meet in my office, or at Greenberry\u2019s downstairs, or elsewhere as you like.<\/p>\n<p>We have so many exciting opportunities, and so little time to organize ourselves to take advantage of them: please don\u2019t be shy. Put yourself and your ideas forward to me, or to your manager, or to SLT. All\u2019s fair. I want to make sure we move as quickly as we can in the right directions.<\/p>\n",
+      "excerpt": "<p>University Librarian John Unsworth outlines his call to action for the Library staff to do what he feels is necessary to make the Library successful.<\/p>\n",
+      "date": "2016-11-14 15:22:49",
+      "modified": "2016-11-14 16:08:26",
+      "categories": [],
+      "tags": [],
+      "author": {
+        "id": 34,
+        "slug": "dhc4z",
+        "name": "dhc4z",
+        "first_name": "",
+        "last_name": "",
+        "nickname": "dhc4z",
+        "url": "",
+        "description": ""
+      },
+      "comments": [],
+      "attachments": [],
+      "comment_count": 0,
+      "comment_status": "closed",
+      "custom_fields": {},
+      "children": []
+    }
+  ]
+}
